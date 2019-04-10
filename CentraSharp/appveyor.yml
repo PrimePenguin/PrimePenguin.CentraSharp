@@ -1,0 +1,33 @@
+version: 4.0.{build}
+image: Visual Studio 2017
+build_script:
+- ps: ./scripts/build.ps1
+artifacts:
+- path: CentraSharp/bin/Release/netstandard1.4
+  name: netstandard16
+- path: CentraSharp/bin/Release/net45
+  name: net461
+skip_commits:
+  message: /\[skip\]/
+  files:
+    - readme.md
+    - LICENSE
+    - .gitignore
+    - .vscode/*
+    - changelog.md
+deploy:
+- provider: NuGet
+  api_key:
+    secure: 
+  on:
+    branch: master
+    appveyor_repo_tag: true
+- provider: GitHub
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  description: "Automated AppVeyor release for CentraSharp v$(APPVEYOR_REPO_TAG_NAME)."
+  auth_token:
+    secure: 
+  artifact: CentraSharp.nupkg
+  on:
+    branch: master
+    appveyor_repo_tag: true
