@@ -10,14 +10,14 @@ namespace PrimePenguin.CentraSharp.Services.Order
     /// <summary>
     ///     A service for manipulating Centra orders.
     /// </summary>
-    public class CustomerService : CentraService
+    public class OrderService : CentraService
     {
         /// <summary>
         ///     Creates a new instance of <see cref="CustomerService" />.
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <param name="shopAccessToken">An API access token for the shop.</param>
-        public CustomerService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
+        public OrderService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
 
