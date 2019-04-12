@@ -2,7 +2,7 @@
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraProductStock
+    public class ProductStock
     {
         /// <summary>
         /// Sku

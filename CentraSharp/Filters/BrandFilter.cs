@@ -6,7 +6,7 @@ namespace PrimePenguin.CentraSharp.Filters
     public class BrandFilter : Parameterizable
     {
         /// <summary>
-        ///     Filter by BrandID;
+        /// Filter by BrandID;
         /// </summary>
         [JsonProperty("brandId")]
         public int BrandId { get; set; }

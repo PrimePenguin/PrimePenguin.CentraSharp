@@ -2,7 +2,7 @@
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraShippingTerms
+    public class PaymentTerms
     {
         /// <summary>
         /// Id

@@ -2,7 +2,7 @@
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraCampaign
+    public class Campaign
     {
         /// <summary>
         /// Id
@@ -14,7 +14,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Campaign
         /// </summary>
         [JsonProperty("campaign")]
-        public string Campaign { get; set; }
+        public string Campaigns { get; set; }
 
         /// <summary>
         /// Price

@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraShipmentResponse
+    public class ShipmentResponse
     {
         /// <summary>
         /// Status
@@ -39,6 +38,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Invoice
         /// </summary>
         [JsonProperty("invoice")]
-        public IList<object> Invoice { get; set; }
+        public string Invoice { get; set; }
     }
 }

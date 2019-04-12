@@ -6,7 +6,7 @@ namespace PrimePenguin.CentraSharp.Filters
     public class CategoryFilter : Parameterizable
     {
         /// <summary>
-        ///     Filter by categoryId;
+        /// Filter by categoryId;
         /// </summary>
         [JsonProperty("categoryId")]
         public int CategoryId { get; set; }

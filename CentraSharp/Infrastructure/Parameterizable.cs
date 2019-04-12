@@ -8,12 +8,12 @@ using PrimePenguin.CentraSharp.Extensions;
 namespace PrimePenguin.CentraSharp.Infrastructure
 {
     /// <summary>
-    ///     An abstract class for parameterizing certain objects.
+    /// An abstract class for parameterizing certain objects.
     /// </summary>
     public abstract class Parameterizable
     {
         /// <summary>
-        ///     Converts the object to an array of KVPs.
+        /// Converts the object to an array of KVPs.
         /// </summary>
         public virtual IEnumerable<KeyValuePair<string, object>> ToParameters()
         {
@@ -48,14 +48,14 @@ namespace PrimePenguin.CentraSharp.Infrastructure
         }
 
         /// <summary>
-        ///     Converts the given property and value to a KeyValuePair for use as a query parameter. Can be overriden to customize
-        ///     parameterization of a property.
-        ///     Will NOT be called by the <see cref="Parameterizable.ToParameters(ParameterType)" /> method if the value
-        ///     is null.
+        /// Converts the given property and value to a KeyValuePair for use as a query parameter. Can be overriden to customize
+        /// parameterization of a property.
+        /// Will NOT be called by the <see cref="Parameterizable.ToParameters(ParameterType)" /> method if the value
+        /// is null.
         /// </summary>
         /// <param name="propName">
-        ///     The name of the property. Will match the property's <see cref="JsonPropertyAttribute" /> name —
-        ///     rather than the real property name — where applicable. Use <paramref name="property" />.Name to get the real name.
+        /// The name of the property. Will match the property's <see cref="JsonPropertyAttribute" /> name —
+        /// rather than the real property name — where applicable. Use <paramref name="property" />.Name to get the real name.
         /// </param>
         /// <param name="value">The property's value.</param>
         /// <param name="property">The property itself.</param>

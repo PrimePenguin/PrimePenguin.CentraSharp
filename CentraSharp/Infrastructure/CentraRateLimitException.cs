@@ -4,7 +4,7 @@ using System.Net;
 namespace PrimePenguin.CentraSharp.Infrastructure
 {
     /// <summary>
-    ///     An exception thrown when an API call has reached Centra's rate limit.
+    /// An exception thrown when an API call has reached Centra's rate limit.
     /// </summary>
     public class CentraRateLimitException : CentraException
     {

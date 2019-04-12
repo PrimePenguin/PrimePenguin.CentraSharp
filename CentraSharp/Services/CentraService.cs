@@ -21,7 +21,7 @@ namespace PrimePenguin.CentraSharp.Services
         private readonly IRequestExecutionPolicy _executionPolicy;
 
         /// <summary>
-        ///     Creates a new instance of <see cref="CentraService" />.
+        /// Creates a new instance of <see cref="CentraService" />.
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <param name="shopAccessToken">An API access token for the shop.</param>
@@ -42,8 +42,8 @@ namespace PrimePenguin.CentraSharp.Services
         protected string AccessToken { get; set; }
 
         /// <summary>
-        ///     Attempts to build a shop API <see cref="Uri" /> for the given shop. Will throw a <see cref="CentraException" /> if
-        ///     the URL cannot be formatted.
+        /// Attempts to build a shop API <see cref="Uri" /> for the given shop. Will throw a <see cref="CentraException" /> if
+        /// the URL cannot be formatted.
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <exception cref="CentraException">Thrown if the given URL cannot be converted into a well-formed URI.</exception>
@@ -81,7 +81,7 @@ namespace PrimePenguin.CentraSharp.Services
         }
 
         /// <summary>
-        ///     Prepares a request to the path and appends the shop's access token header if applicable.
+        /// Prepares a request to the path and appends the shop's access token header if applicable.
         /// </summary>
         protected CloneableRequestMessage PrepareRequestMessage(RequestUri uri, HttpMethod method,
             HttpContent content = null)
@@ -96,15 +96,15 @@ namespace PrimePenguin.CentraSharp.Services
         }
 
         /// <summary>
-        ///     Executes a request and returns the given type. Throws an exception when the response is invalid.
-        ///     Use this method when the expected response is a single line or simple object that doesn't warrant its own class.
+        /// Executes a request and returns the given type. Throws an exception when the response is invalid.
+        /// Use this method when the expected response is a single line or simple object that doesn't warrant its own class.
         /// </summary>
         /// <remarks>
-        ///     This method will automatically dispose the
-        ///     <paramref>
-        ///         <name>baseRequestMessage</name>
-        ///     </paramref>
-        ///     when finished.
+        /// This method will automatically dispose the
+        /// <paramref>
+        ///     <name>baseRequestMessage</name>
+        /// </paramref>
+        /// when finished.
         /// </remarks>
         protected async Task<T> ExecuteRequestAsync<T>(RequestUri uri, HttpMethod method, HttpContent content = null,
             string rootElement = null)
@@ -137,7 +137,7 @@ namespace PrimePenguin.CentraSharp.Services
         }
 
         /// <summary>
-        ///     Checks a response for exceptions or invalid status codes. Throws an exception when necessary.
+        /// Checks a response for exceptions or invalid status codes. Throws an exception when necessary.
         /// </summary>
         /// <param name="response">The response.</param>
         /// <param name="rawResponse"></param>
@@ -156,7 +156,8 @@ namespace PrimePenguin.CentraSharp.Services
             // If the error was caused by reaching the API rate limit, throw a rate limit exception.
             if ((int) code == 429 /* Too many requests */)
             {
-                const string listMessage = "Exceeded 2 calls per second for api client. Reduce request rates to resume uninterrupted service.";
+                const string listMessage =
+                    "Exceeded 2 calls per second for api client. Reduce request rates to resume uninterrupted service.";
                 var rateLimitMessage = $"Error: {listMessage}";
 
                 // centra used to return JSON for rate limit exceptions, but then made an unannounced change and started returing HTML. 
@@ -193,7 +194,7 @@ namespace PrimePenguin.CentraSharp.Services
         }
 
         /// <summary>
-        ///     Parses a JSON string for Centra API errors.
+        /// Parses a JSON string for Centra API errors.
         /// </summary>
         /// <returns>Returns null if the JSON could not be parsed into an error.</returns>
         public static Dictionary<string, IEnumerable<string>> ParseErrorJson(string json)
@@ -275,6 +276,7 @@ namespace PrimePenguin.CentraSharp.Services
                                 default:
                                     throw new ArgumentOutOfRangeException();
                             }
+
                             errors.Add(name, list);
                         }
                 }

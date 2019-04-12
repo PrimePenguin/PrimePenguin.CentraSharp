@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraCategories
+    public class ProductCategory
     {
         /// <summary>
         /// MetaTitle
@@ -45,7 +45,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Localized
         /// </summary>
         [JsonProperty("localized")]
-        public CentraLocalized Localized { get; set; }
+        public Localized Localized { get; set; }
 
         /// <summary>
         /// CompleteUri
@@ -70,5 +70,11 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("products")]
         public IList<string> Products { get; set; }
+
+        /// <summary>
+        /// Categories
+        /// </summary>
+        [JsonProperty("categories")]
+        public List<Categories> Categories { get; set; }
     }
 }

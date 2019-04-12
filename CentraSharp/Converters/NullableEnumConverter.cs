@@ -9,8 +9,8 @@ namespace PrimePenguin.CentraSharp.Converters
 {
     /// <inheritdoc />
     /// <summary>
-    ///     A custom enum converter for all enums which returns the value
-    ///     as null when the value is null or does not exist.
+    /// A custom enum converter for all enums which returns the value
+    /// as null when the value is null or does not exist.
     /// </summary>
     public class NullableEnumConverter<T> : StringEnumConverter where T : struct
     {
@@ -35,9 +35,9 @@ namespace PrimePenguin.CentraSharp.Converters
                 if (((EnumMemberAttribute) enumMember.First()).Value == reader.Value?.ToString())
                     return (T) enumVal;
             }
+
             //No match found. Return null.
             return null;
-
         }
     }
 }

@@ -3,7 +3,7 @@ using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Filters
 {
-    public class CentraStockFilter : Parameterizable
+    public class StockFilter : Parameterizable
     {
         /// <summary>
         /// Filter stock by sku
@@ -16,7 +16,7 @@ namespace PrimePenguin.CentraSharp.Filters
         /// </summary>
         [JsonProperty("ean")]
         public string Ean { get; set; }
-        
+
         /// <summary>
         /// filter stock by limit
         /// </summary>

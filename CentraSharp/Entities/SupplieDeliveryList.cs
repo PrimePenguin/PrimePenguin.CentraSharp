@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraProductsList
+    public class SupplieDeliveryList
     {
         /// <summary>
         /// Status
@@ -12,9 +14,9 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Status { get; set; }
 
         /// <summary>
-        /// Products
+        /// SupplierOrders
         /// </summary>
-        [JsonProperty("products")]
-        public IList<CentraProduct> Products { get; set; }
+        [JsonProperty("deliveries ")]
+        public List<SupplierOrderDelivery> SupplierOrderDeliveries { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraLocalized
+    public class Localized
     {
         /// <summary>
         /// Sv

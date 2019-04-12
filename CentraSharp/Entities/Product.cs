@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraProduct
+    public class Product
     {
         /// <summary>
         /// Sku
@@ -39,7 +39,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Product
         /// </summary>
         [JsonProperty("product")]
-        public string Product { get; set; }
+        public string Products { get; set; }
 
         /// <summary>
         /// Variant
@@ -129,13 +129,13 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Images
         /// </summary>
         [JsonProperty("images")]
-        public IList<object> Images { get; set; }
+        public IList<string> Images { get; set; }
 
         /// <summary>
         /// Prices
         /// </summary>
         [JsonProperty("prices")]
-        public IList<CentraPrice> Prices { get; set; }
+        public IList<Price> Prices { get; set; }
 
         /// <summary>
         /// CostPrice

@@ -7,12 +7,12 @@ using System.Runtime.Serialization;
 namespace PrimePenguin.CentraSharp.Extensions
 {
     /// <summary>
-    ///     Enum Extension Method
+    /// Enum Extension Method
     /// </summary>
     public static class EnumExtensions
     {
         /// <summary>
-        ///     Reads and uses the enum's <see cref="EnumMemberAttribute" /> for serialization.
+        /// Reads and uses the enum's <see cref="EnumMemberAttribute" /> for serialization.
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
@@ -27,7 +27,7 @@ namespace PrimePenguin.CentraSharp.Extensions
         }
 
         /// <summary>
-        ///     Convert list of Enums to a comma seperated string
+        /// Convert list of Enums to a comma seperated string
         /// </summary>
         public static string EnumListToString<T>(IEnumerable<T> enumList)
         {

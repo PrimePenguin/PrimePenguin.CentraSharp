@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class CentraCustomer
+    public class Customer
     {
         /// <summary>
         /// CustomerId
@@ -93,7 +94,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Consents
         /// </summary>
         [JsonProperty("consents")]
-        public List<object> Consents { get; set; }
+        public List<Consent> Consents { get; set; }
 
         /// <summary>
         /// Created
@@ -106,5 +107,55 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("modified")]
         public string Modified { get; set; }
+    }
+
+    public class Consent
+    {
+        /// <summary>
+        /// Key
+        /// </summary>
+        [JsonProperty("key")]
+        public string Key { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Consented
+        /// </summary>
+        [JsonProperty("consented")]
+        public bool Consented { get; set; }
+
+        /// <summary>
+        /// Text
+        /// </summary>
+        [JsonProperty("text")]
+        public string Text { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty("language")]
+        public string Language { get; set; }
+
+        /// <summary>
+        /// Version
+        /// </summary>
+        [JsonProperty("version")]
+        public string Version { get; set; }
+
+        /// <summary>
+        /// Created
+        /// </summary>
+        [JsonProperty("created")]
+        public DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Modified
+        /// </summary>
+        [JsonProperty("modified")]
+        public DateTimeOffset? Modified { get; set; }
     }
 }

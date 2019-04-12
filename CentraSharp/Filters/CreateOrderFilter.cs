@@ -5,7 +5,7 @@ using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Filters
 {
-    public class CentraCreateOrderFilter : Parameterizable
+    public class CreateOrderFilter : Parameterizable
     {
         /// <summary>
         /// Invoice Address for customer order
