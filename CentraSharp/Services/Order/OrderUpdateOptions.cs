@@ -16,10 +16,5 @@ namespace PrimePenguin.CentraSharp.Services.Order
         [JsonProperty("internalComment")]
         public string InternalComment { get; set; }
 
-        /// <summary>
-        /// TResponse in xml format instead of json.
-        /// </summary>
-        [JsonProperty("xml")]
-        public bool Xml { get; set; }
     }
 }

@@ -1,9 +1,11 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Infrastructure;
+using PrimePenguin.CentraSharp.Services.Customer;
 
 namespace PrimePenguin.CentraSharp.Services.Order
 {
@@ -40,10 +42,16 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// </summary>
         /// <param name="orderId">The id of the order to retrieve.</param>
         /// <returns>The <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<Entities.Order> GetAsync(long orderId)
+        public virtual async Task<OrdersList> GetAsync(int orderId)
         {
-            var req = PrepareRequest($"orders?order={orderId}");
-            return await ExecuteRequestAsync<Entities.Order>(req, HttpMethod.Get, rootElement: "order");
+            var options = new List<KeyValuePair<string, object>>()
+            {
+                new KeyValuePair<string, object>("order", $"{orderId}")
+            };
+
+            var req = PrepareRequest($"orders");
+            req.QueryParams.AddRange(options);
+            return await ExecuteRequestAsync<OrdersList>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -51,15 +59,12 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// </summary>
         /// <param name="orderUpdateOptions"></param>
         /// <returns></returns>
-        public virtual async Task<Entities.Order> UpdateAsync(OrderUpdateOptions orderUpdateOptions)
+        public virtual async Task<UpdateOrderResponse> UpdateAsync(OrderUpdateOptions orderUpdateOptions)
         {
             var req = PrepareRequest("orders");
             var body = orderUpdateOptions.ToDictionary();
-            var content = new JsonContent(new
-            {
-                body
-            });
-            return await ExecuteRequestAsync<Entities.Order>(req, HttpMethod.Put, content);
+            var content = new JsonContent(body);
+            return await ExecuteRequestAsync<UpdateOrderResponse>(req, HttpMethod.Put, content);
         }
 
         /// <summary>
@@ -72,10 +77,7 @@ namespace PrimePenguin.CentraSharp.Services.Order
         {
             var req = PrepareRequest("order");
             var body = order.ToDictionary();
-            var content = new JsonContent(new
-            {
-                order = body
-            });
+            var content = new JsonContent(body);
 
             return await ExecuteRequestAsync<Entities.Order>(req, HttpMethod.Post, content);
         }
@@ -89,10 +91,7 @@ namespace PrimePenguin.CentraSharp.Services.Order
         public virtual async Task<CompleteOrderResponse> CompleteOrderAsync(long orderId, string comment)
         {
             var req = PrepareRequest($"order/{orderId}");
-            var content = new JsonContent(new
-            {
-                comment
-            });
+            var content = new JsonContent(comment);
             return await ExecuteRequestAsync<CompleteOrderResponse>(req, HttpMethod.Put, content);
         }
     }
