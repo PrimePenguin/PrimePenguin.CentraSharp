@@ -22,7 +22,7 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// Return a specific customer.
         /// </summary>
         [JsonProperty("email")]
-        public bool Email { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Get all customers added after a certain date.

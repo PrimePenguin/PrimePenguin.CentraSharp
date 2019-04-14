@@ -15,5 +15,17 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         [JsonProperty("quantity")]
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// CostPrice
+        /// </summary>
+        [JsonProperty("costPrice")]
+        public double CostPrice { get; set; }
+
+        /// <summary>
+        /// CostPriceCurrency
+        /// </summary>
+        [JsonProperty("costPriceCurrency")]
+        public string CostPriceCurrency { get; set; }
     }
 }

@@ -148,5 +148,30 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("costPriceCurrency")]
         public string CostPriceCurrency { get; set; }
+
+        /// <summary>
+        /// LineId
+        /// </summary>
+        [JsonProperty("lineId")]
+        public string LineId { get; set; }
+
+
+        /// <summary>
+        /// Qty
+        /// </summary>
+        [JsonProperty("qty")]
+        public string Qty { get; set; }
+
+        /// <summary>
+        /// OriginalPrice
+        /// </summary>
+        [JsonProperty("originalPrice")]
+        public decimal OriginalPrice { get; set; }
+
+        /// <summary>
+        /// Price
+        /// </summary>
+        [JsonProperty("price")]
+        public decimal Price { get; set; }
     }
 }

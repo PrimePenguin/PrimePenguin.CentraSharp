@@ -44,7 +44,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
 
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
-            return await ExecuteRequestAsync<ProductsList>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<ProductsList>(req, HttpMethod.Post);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productUpdateOptions"></param>
         /// <returns></returns>
-        public virtual async Task<Entities.Order> UpdateAsync(ProductUpdateOptions productUpdateOptions)
+        public virtual async Task<Entities.Order> UpdateAsync(List<ProductUpdateOptions> productUpdateOptions)
         {
             var req = PrepareRequest("stock");
             var body = productUpdateOptions.ToDictionary();

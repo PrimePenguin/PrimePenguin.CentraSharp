@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Filters
@@ -22,5 +23,17 @@ namespace PrimePenguin.CentraSharp.Filters
         /// </summary>
         [JsonProperty("limit")]
         public int Limit { get; set; }
+
+        /// <summary>
+        /// Created
+        /// </summary>
+        [JsonProperty("created")]
+        public DateTimeOffset? Created { get; set; }
+
+        /// <summary>
+        /// Modified
+        /// </summary>
+        [JsonProperty("modified")]
+        public DateTimeOffset? Modified { get; set; }
     }
 }

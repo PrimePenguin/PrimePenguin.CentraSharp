@@ -97,5 +97,11 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// </summary>
         [JsonProperty("language")]
         public string Language { get; set; }
+
+        /// <summary>
+        /// Return a specific customer.
+        /// </summary>
+        [JsonProperty("email")]
+        public string Email { get; set; }
     }
 }

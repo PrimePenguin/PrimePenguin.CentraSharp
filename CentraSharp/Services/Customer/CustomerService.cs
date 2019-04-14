@@ -39,10 +39,10 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// </summary>
         /// <param name="customerId"></param>
         /// <returns>The customer for matched Id</returns>
-        public virtual async Task<CustomerList> GetAsync(long customerId)
+        public virtual async Task<CustomerById> GetAsync(int customerId)
         {
             var req = PrepareRequest($"customers/{customerId}");
-            return await ExecuteRequestAsync<CustomerList>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<CustomerById>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -51,15 +51,15 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// <param name="updateCustomer"></param>
         /// <param name="cutomerId"></param>
         /// <returns></returns>
-        public virtual async Task<CustomerList> UpdateAsync(UpdateCustomerOptions updateCustomer, int cutomerId)
+        public virtual async Task<CustomerById> UpdateAsync(UpdateCustomerOptions updateCustomer, int customerId)
         {
-            var req = PrepareRequest($"customers/{cutomerId}");
+            var req = PrepareRequest($"customers/{customerId}");
             var body = updateCustomer.ToDictionary();
             var content = new JsonContent(new
             {
                 body
             });
-            return await ExecuteRequestAsync<CustomerList>(req, HttpMethod.Put, content);
+            return await ExecuteRequestAsync<CustomerById>(req, HttpMethod.Put, content);
         }
     }
 }

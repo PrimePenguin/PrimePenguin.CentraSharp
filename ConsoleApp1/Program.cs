@@ -13,6 +13,11 @@ namespace ConsoleApp1
     {
         private static void Main(string[] args)
         {
+
+            var cc = new OrderFilter { Limits = 5, order = 7 };
+            var customwe = new CustomerService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
+
+            var ddd = Task.Run(async () => await customwe.GetAsync(5));
             var aa = new OrderFilter { Limits = 5, order = 7 };
             var product = new ProductService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
             var a = Task.Run(async () => await product.ListAsync());
@@ -26,6 +31,7 @@ namespace ConsoleApp1
             b.Wait();
             c.Wait();
             d.Wait();
+            ddd.Wait();
         }
     }
 }
