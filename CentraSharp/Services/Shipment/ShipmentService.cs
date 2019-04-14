@@ -10,14 +10,14 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
     /// <summary>
     /// A service for manipulating Shipment of products.
     /// </summary>
-    public class ReturnService : CentraService
+    public class ShipmentService : CentraService
     {
         /// <summary>
         /// Creates a new instance of <see cref="CentraService" />.
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <param name="shopAccessToken">An API access token for the shop.</param>
-        public ReturnService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
+        public ShipmentService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
 
