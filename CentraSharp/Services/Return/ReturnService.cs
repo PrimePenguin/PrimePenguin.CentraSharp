@@ -27,10 +27,12 @@ namespace PrimePenguin.CentraSharp.Services.Return
         public virtual async Task<CentraReturnResponse> CreateReturnAsync(CentraReturnOptions returnOptions)
         {
             var req = PrepareRequest("return");
-            var body = returnOptions.ToDictionary();
             var content = new JsonContent(new
             {
-                body
+                comment = returnOptions.Comment,
+                products = returnOptions.Products,
+                returnStock = returnOptions.ReturnStock,
+                shipment = returnOptions.Shipment
             });
             return await ExecuteRequestAsync<CentraReturnResponse>(req, HttpMethod.Post, content);
         }

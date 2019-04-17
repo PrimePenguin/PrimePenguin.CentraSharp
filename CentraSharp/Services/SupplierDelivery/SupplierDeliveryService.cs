@@ -1,8 +1,7 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
-using PrimePenguin.CentraSharp.Extensions;
+﻿using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Infrastructure;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
 {
@@ -19,11 +18,11 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         public SupplierDeliveryService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
-        
-       /// <summary>
-       /// Get List of Supplier Deliveries
-       /// </summary>
-       /// <returns></returns>
+
+        /// <summary>
+        /// Get List of Supplier Deliveries
+        /// </summary>
+        /// <returns></returns>
         public virtual async Task<SupplieDeliveryList> ListSupplierDeliveriesAsync()
         {
             var req = PrepareRequest("supplier-deliveries");
@@ -61,10 +60,9 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         public virtual async Task<AcceptDeliveryResponse> AcceptSupplierDeliveryAsync(UpdateSupplierDeliveryOption option, int supplierDeliveryId)
         {
             var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}");
-            var body = option.ToDictionary();
             var content = new JsonContent(new
             {
-                body
+                products = option.Products
             });
             return await ExecuteRequestAsync<AcceptDeliveryResponse>(req, HttpMethod.Post, content);
         }

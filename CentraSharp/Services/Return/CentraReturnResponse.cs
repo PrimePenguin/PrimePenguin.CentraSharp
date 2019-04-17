@@ -3,30 +3,30 @@ using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Services.Return
 {
-    public class CentraReturnOptions
+    public class CentraReturnResponse
     {
         /// <summary>
-        /// Shipment
+        /// Status
         /// </summary>
-        [JsonProperty("shipment")]
-        public string Shipment { get; set; }
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
         /// <summary>
-        /// ReturnStock
+        /// Return
         /// </summary>
-        [JsonProperty("returnStock")]
-        public int ReturnStock { get; set; }
+        [JsonProperty("return")]
+        public int Return { get; set; }
 
         /// <summary>
-        /// Comment
+        /// ReturnedItems
         /// </summary>
-        [JsonProperty("comment")]
-        public string Comment { get; set; }
+        [JsonProperty("returnedItems")]
+        public List<string> ReturnedItems { get; set; }
 
         /// <summary>
-        /// Products
+        /// Msg
         /// </summary>
-        [JsonProperty("products")]
-        public Dictionary<int, int> Products { get; set; }
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
     }
 }
