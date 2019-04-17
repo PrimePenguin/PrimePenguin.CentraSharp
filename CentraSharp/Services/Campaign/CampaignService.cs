@@ -3,9 +3,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
-using PrimePenguin.CentraSharp.Filters;
 
-namespace PrimePenguin.CentraSharp.Services.Brand
+namespace PrimePenguin.CentraSharp.Services.Campaign
 {
     /// <summary>
     /// A service for manipulating Centra products Campaign.
@@ -44,6 +43,21 @@ namespace PrimePenguin.CentraSharp.Services.Brand
             var req = PrepareRequest("campaigns");
             req.QueryParams.AddRange(options);
             return await ExecuteRequestAsync<CampaignList>(req, HttpMethod.Get);
+        }
+
+        /// <summary>
+        /// Get CampaignSites By Id
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task<CampaignSites> GetCampaignSites(string campaignSiteUri)
+        {
+            var options = new List<KeyValuePair<string, object>>()
+            {
+                new KeyValuePair<string, object>("campaignSiteURI", $"{campaignSiteUri}")
+            };
+            var req = PrepareRequest("campaigns");
+            req.QueryParams.AddRange(options);
+            return await ExecuteRequestAsync<CampaignSites>(req, HttpMethod.Get);
         }
     }
 }

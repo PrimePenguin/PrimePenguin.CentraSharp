@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Services.Brand;
+using PrimePenguin.CentraSharp.Services.Campaign;
 using PrimePenguin.CentraSharp.Services.Category;
 using PrimePenguin.CentraSharp.Services.Customer;
 using PrimePenguin.CentraSharp.Services.Order;
