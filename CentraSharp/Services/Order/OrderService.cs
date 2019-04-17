@@ -92,7 +92,7 @@ namespace PrimePenguin.CentraSharp.Services.Order
         {
             var req = PrepareRequest($"order/{orderId}");
             var content = new JsonContent(comment);
-            return await ExecuteRequestAsync<CompleteOrderResponse>(req, HttpMethod.Put, content);
+            return await ExecuteRequestAsync<CompleteOrderResponse>(req, HttpMethod.Post, content);
         }
     }
 }
