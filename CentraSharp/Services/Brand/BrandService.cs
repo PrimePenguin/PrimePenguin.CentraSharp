@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 
@@ -30,6 +31,22 @@ namespace PrimePenguin.CentraSharp.Services.Brand
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
             return await ExecuteRequestAsync<IList<string>>(req, HttpMethod.Get);
+        }
+
+
+        /// <summary>
+        /// Get MeasurementCharts and FilterBy Id
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task<IList<MeasurementCharts>> GetMeasurementCharts(int measurementChartId)
+        {
+            var options = new List<KeyValuePair<string, object>>()
+            {
+                new KeyValuePair<string, object>("measurementChartId", $"{measurementChartId}")
+            };
+            var req = PrepareRequest("measurement-charts");
+            req.QueryParams.AddRange(options);
+            return await ExecuteRequestAsync<IList<MeasurementCharts>>(req, HttpMethod.Get);
         }
     }
 }
