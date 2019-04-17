@@ -47,16 +47,12 @@ namespace ConsoleApp1
             //    InternalComment = "new"
             //}).Result;
             //var json = JsonConvert.SerializeObject(orders, Formatting.Indented);
-            var shipmentService = new ShipmentService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
+            var shipmentService = new CampaignService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
             var data = new List<KeyValuePair<string, int>>()
             {
                 new KeyValuePair<string, int>("9", 1)
             };
-            var orders = shipmentService.CreateShipmentAsync(new ShipmentFilter
-            {
-                Order = 11,
-                Products = data
-            }).Result;
+            var orders = shipmentService.GetCampaign().Result;
             var json = JsonConvert.SerializeObject(orders, Formatting.Indented);
         }
     }

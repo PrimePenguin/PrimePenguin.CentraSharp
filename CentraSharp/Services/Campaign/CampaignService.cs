@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 
@@ -21,15 +22,28 @@ namespace PrimePenguin.CentraSharp.Services.Brand
         }
 
         /// <summary>
-        /// Get BrandsList and FilterBy Id
+        /// Get CampaignList 
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IList<string>> GetBrands(BrandFilter options)
+        public virtual async Task<List<CampaignList>> GetCampaign()
         {
-            var req = PrepareRequest("brands");
-            if (options != null) req.QueryParams.AddRange(options.ToParameters());
+            var req = PrepareRequest("campaigns");
+            return await ExecuteRequestAsync<List<CampaignList>>(req, HttpMethod.Get);
+        }
 
-            return await ExecuteRequestAsync<IList<string>>(req, HttpMethod.Get);
+        /// <summary>
+        /// Get Campaign By Id
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task<CampaignList> GetCampaignById(int campaignId)
+        {
+            var options = new List<KeyValuePair<string, object>>()
+            {
+                new KeyValuePair<string, object>("campaignId", $"{campaignId}")
+            };
+            var req = PrepareRequest("campaigns");
+            req.QueryParams.AddRange(options);
+            return await ExecuteRequestAsync<CampaignList>(req, HttpMethod.Get);
         }
     }
 }
