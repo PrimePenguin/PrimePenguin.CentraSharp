@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Services.Brand;
@@ -6,6 +9,7 @@ using PrimePenguin.CentraSharp.Services.Category;
 using PrimePenguin.CentraSharp.Services.Customer;
 using PrimePenguin.CentraSharp.Services.Order;
 using PrimePenguin.CentraSharp.Services.Product;
+using PrimePenguin.CentraSharp.Services.Shipment;
 using PrimePenguin.CentraSharp.Services.SupplierOrder;
 
 namespace ConsoleApp1
@@ -36,11 +40,22 @@ namespace ConsoleApp1
             //ddd.Wait();
             //order1.Wait();
 
-            var orderService = new OrderService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
-            var orders = orderService.UpdateAsync(new OrderUpdateOptions
+            //var orderService = new OrderService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
+            //var orders = orderService.UpdateAsync(new OrderUpdateOptions
+            //{
+            //    Order = 11,
+            //    InternalComment = "new"
+            //}).Result;
+            //var json = JsonConvert.SerializeObject(orders, Formatting.Indented);
+            var shipmentService = new ShipmentService("https://sandbox.centraqa.com/", "5pNYv8tlXDmb");
+            var data = new List<KeyValuePair<string, int>>()
+            {
+                new KeyValuePair<string, int>("9", 1)
+            };
+            var orders = shipmentService.CreateShipmentAsync(new ShipmentFilter
             {
                 Order = 11,
-                InternalComment = "new"
+                Products = data
             }).Result;
             var json = JsonConvert.SerializeObject(orders, Formatting.Indented);
         }

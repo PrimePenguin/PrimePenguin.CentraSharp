@@ -10,30 +10,30 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// Limit amount of customers returned.
         /// </summary>
         [JsonProperty("limit")]
-        public int Limit { get; set; }
+        public int? Limit { get; set; } = null;
 
         /// <summary>
         /// Offset how far in to start returning customers.
         /// </summary>
         [JsonProperty("offset")]
-        public int Offset { get; set; }
+        public int? Offset { get; set; } = null;
 
         /// <summary>
         /// Return a specific customer.
         /// </summary>
         [JsonProperty("email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = null;
 
         /// <summary>
         /// Get all customers added after a certain date.
         /// </summary>
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; set; }
+        public string Created { get; set; } = null;
 
         /// <summary>
         /// Get all customers modified after a certain date.
         /// </summary>
         [JsonProperty("modified")]
-        public DateTimeOffset? Modified { get; set; }
+        public string Modified { get; set; } = null;
     }
 }

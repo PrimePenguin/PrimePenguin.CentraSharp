@@ -39,5 +39,11 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("invoice")]
         public string Invoice { get; set; }
+
+        /// <summary>
+        /// Msg
+        /// </summary>
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
     }
 }
