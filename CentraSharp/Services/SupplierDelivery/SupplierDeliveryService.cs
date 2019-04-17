@@ -35,7 +35,7 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// </summary>
         /// <param name="supplierDeliveryId"></param>
         /// <returns></returns>
-        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryAsync(long supplierDeliveryId)
+        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryAsync(int supplierDeliveryId)
         {
             var req = PrepareRequest($"supplier-delivery/{supplierDeliveryId}");
             return await ExecuteRequestAsync<SupplieDeliveryList>(req, HttpMethod.Get);
@@ -46,7 +46,7 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// </summary>
         /// <param name="supplierDeliveryId"></param>
         /// <returns></returns>
-        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryDetailsAsync(long supplierDeliveryId)
+        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryDetailsAsync(int supplierDeliveryId)
         {
             var req = PrepareRequest($"supplier-delivery/{supplierDeliveryId}/details");
             return await ExecuteRequestAsync<SupplieDeliveryList>(req, HttpMethod.Get);
@@ -58,7 +58,7 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// <param name="option"></param>
         /// <param name="supplierDeliveryId"></param>
         /// <returns></returns>
-        public virtual async Task<AcceptDeliveryResponse> AcceptSupplierDeliveryAsync(UpdateSupplierDeliveryOption option, long supplierDeliveryId)
+        public virtual async Task<AcceptDeliveryResponse> AcceptSupplierDeliveryAsync(UpdateSupplierDeliveryOption option, int supplierDeliveryId)
         {
             var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}");
             var body = option.ToDictionary();
