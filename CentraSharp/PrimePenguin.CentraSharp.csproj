@@ -1,23 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <TargetFrameworks>netcoreapp2.1;netstandard1.4;</TargetFrameworks>
+    <AssemblyName>CentraSharp</AssemblyName>
+    <RootNamespace>StarwebSharp</RootNamespace>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>
+    <Authors>Sourav Thakur</Authors>
+    <Copyright>Prime Penguin</Copyright>
     <PackageLicenseUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp</RepositoryUrl>
+    <PackageTags>Centra,ecommerce</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIconUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/PrimePenguin.png</PackageIconUrl>
-    <Company>PrimePenguin</Company>
-    <Copyright>PrimePenguin</Copyright>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Company>Prime Penguin</Company>
+    <PackageId>CentraSharp</PackageId>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Primitives" Version="2.2.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
-    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="microsoft.extensions.primitives" Version="1.1.0" />
+    <PackageReference Include="newtonsoft.json" Version="10.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
-
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
+    <DefineConstants>NETFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
+    <DefineConstants>NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
+    <DefineConstants>NETCORE</DefineConstants>
+  </PropertyGroup>
 </Project>
