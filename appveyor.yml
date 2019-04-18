@@ -1,33 +1,29 @@
-version: {build}
-image: Visual Studio 2017
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+  - master
+nuget:
+  disable_publish_on_pr: true
 build_script:
-- ps: ./scripts/build.ps1
+- ps:  ./scripts/build.ps1
+test: off
 artifacts:
-- path: CentraSharp/bin/Release/netstandard1.4
-  name: netstandard16
-- path: CentraSharp/bin/Release/net45
-  name: net461
-skip_commits:
-  message: /\[skip\]/
-  files:
-    - readme.md
-    - LICENSE
-    - .gitignore
-    - .vscode/*
-    - changelog.md
+- path: .\artifacts\**\*.nupkg
+  name: NuGet
 deploy:
 - provider: NuGet
+  server: https://www.myget.org/F/primepenguin-centrasharp/api/v2
   api_key:
-    secure: 96E3IcXIRzwwJQz81YNnRAAY19ivu7xWzt7aEJWR5p3PwlC2gDbryzPqPwAi28mF
+    secure: jXdWHOx5j3gdlvz0NgLl9oIFOqQ/ANEcSerzq7o7sWvCkISlh59J4lblckoOezH4
+  skip_symbols: true
   on:
     branch: master
-    appveyor_repo_tag: true
-- provider: GitHub
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  description: "Automated AppVeyor release for CentraSharp v$(APPVEYOR_REPO_TAG_NAME)."
-  auth_token:
-    secure: jXdWHOx5j3gdlvz0NgLl9oIFOqQ/ANEcSerzq7o7sWvCkISlh59J4lblckoOezH4
-  artifact: CentraSharp.nupkg
+- provider: NuGet
+  name: production
+  api_key:
+    secure: 96E3IcXIRzwwJQz81YNnRAAY19ivu7xWzt7aEJWR5p3PwlC2gDbryzPqPwAi28mF
   on:
     branch: master
     appveyor_repo_tag: true
