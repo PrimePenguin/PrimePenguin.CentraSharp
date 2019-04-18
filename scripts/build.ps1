@@ -1,6 +1,6 @@
 dotnet restore;
 dotnet build -c Release;
-dotnet pack --no-build -c Release PrimePenguin.CentraSharp/CentraSharp.csproj;
+dotnet pack --no-build -c Release CentraSharp/PrimePenguin.CentraSharp.csproj;
 
 $nupkg = (Get-ChildItem CentraSharp/bin/Release/*.nupkg)[0];
 
