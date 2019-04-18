@@ -4,7 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.1.0-beta-*</Version>
+    <PackageLicenseUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/PrimePenguin.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
