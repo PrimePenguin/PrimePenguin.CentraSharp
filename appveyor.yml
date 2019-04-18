@@ -28,6 +28,6 @@ deploy:
   description: "Automated AppVeyor release for CentraSharp v$(APPVEYOR_REPO_TAG_NAME)."
   auth_token:
     secure: tlPfNhypRf0lu3Um0kn7l7dUCycV7sYxbJc5c6ZEVtGXTGvbN+srQZW7iPJ8o7Ib
-  artifact: CentraSharp.nupkg
+  artifact: PrimePenguin.CentraSharp.nupkg
   on:
     branch: master
