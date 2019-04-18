@@ -16,7 +16,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIconUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/PrimePenguin.png</PackageIconUrl>
     <Company>Prime Penguin</Company>
-    <PackageId>CentraSharp</PackageId>
+    <PackageId>PrimePenguin.CentraSharp</PackageId>
+    <Product>PrimePenguin.CentraSharp</Product>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="microsoft.extensions.primitives" Version="1.1.0" />
