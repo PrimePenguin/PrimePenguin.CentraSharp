@@ -27,7 +27,7 @@ deploy:
   tag: $(APPVEYOR_REPO_TAG_NAME)
   description: "Automated AppVeyor release for CentraSharp v$(APPVEYOR_REPO_TAG_NAME)."
   auth_token:
-    secure: 96E3IcXIRzwwJQz81YNnRAAY19ivu7xWzt7aEJWR5p3PwlC2gDbryzPqPwAi28mF
+    secure: FtNb6c+u7kSECRUn/clCWtUcqdfOrIeEUOUrnNLmAyAQmviWKkvRS5LTuG6fV+OE
   artifact: CentraSharp.nupkg
   on:
     branch: master
