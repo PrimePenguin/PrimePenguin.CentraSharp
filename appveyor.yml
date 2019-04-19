@@ -28,4 +28,4 @@ deploy:
 - provider: NuGet
   api_key:
     secure: tlPfNhypRf0lu3Um0kn7l7dUCycV7sYxbJc5c6ZEVtGXTGvbN+srQZW7iPJ8o7Ib
- artifact: PrimePenguin.CentraSharp.0.0.{build}.nupkg
+ artifact: PrimePenguin.CentraSharp.nupkg
