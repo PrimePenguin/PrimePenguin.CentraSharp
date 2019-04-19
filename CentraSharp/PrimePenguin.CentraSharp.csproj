@@ -3,7 +3,7 @@
     <TargetFrameworks>netcoreapp2.1;netstandard1.4;</TargetFrameworks>
     <AssemblyName>CentraSharp</AssemblyName>
     <RootNamespace>StarwebSharp</RootNamespace>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>
@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp</RepositoryUrl>
     <PackageTags>Centra,ecommerce</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageIconUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/PrimePenguin.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/PrimePenguin.png</PackageIconUrl>
     <Company>Prime Penguin</Company>
     <PackageId>PrimePenguin.CentraSharp</PackageId>
     <Product>PrimePenguin.CentraSharp</Product>
