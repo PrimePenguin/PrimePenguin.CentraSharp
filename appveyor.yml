@@ -27,5 +27,5 @@ deploy:
     branch: master
 - provider: NuGet
   api_key:
-    secure: tlPfNhypRf0lu3Um0kn7l7dUCycV7sYxbJc5c6ZEVtGXTGvbN+srQZW7iPJ8o7Ib
+    secure: SF6fJ0FWMIBt2bASGT1L4KFHJyKkla3Z8GTq11Wovy8jWbnNqzB4AG9vlFJ/nvw4
   artifact: PrimePenguin.CentraSharp.nupkg
