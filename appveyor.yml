@@ -17,8 +17,6 @@ deploy:
   on:
     branch: master
 - provider: NuGet
-  name: production
   api_key:
     secure: tlPfNhypRf0lu3Um0kn7l7dUCycV7sYxbJc5c6ZEVtGXTGvbN+srQZW7iPJ8o7Ib
-  on:
-    branch: master
+  artifact: /.*\.nupkg/
