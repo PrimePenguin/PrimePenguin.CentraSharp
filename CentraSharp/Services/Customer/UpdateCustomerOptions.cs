@@ -77,6 +77,12 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// </summary>
         [JsonProperty("email")]
         public string Email { get; set; }
+
+        /// <summary>
+        /// Message
+        /// </summary>
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
     }
 
     public class UpdateCustomerConsent

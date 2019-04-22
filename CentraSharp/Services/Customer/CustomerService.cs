@@ -1,4 +1,5 @@
 ﻿using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
@@ -49,17 +50,15 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// Update customer for given customerID
         /// </summary>
         /// <param name="updateCustomer"></param>
-        /// <param name="cutomerId"></param>
+        /// <param name="customerId"></param>
         /// <returns></returns>
         public virtual async Task<CustomerById> UpdateAsync(UpdateCustomerOptions updateCustomer, int customerId)
         {
             var req = PrepareRequest($"customers/{customerId}");
             var body = updateCustomer.ToDictionary();
-            var content = new JsonContent(new
-            {
-                body
-            });
-            return await ExecuteRequestAsync<CustomerById>(req, HttpMethod.Put, content);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            return await ExecuteRequestAsync<CustomerById>(req, HttpMethod.Put, httpContent);
         }
     }
 }

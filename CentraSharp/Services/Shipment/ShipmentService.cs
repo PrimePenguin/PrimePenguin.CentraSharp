@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
@@ -31,15 +32,10 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public virtual async Task<ShipmentResponse> CreateShipmentAsync(ShipmentFilter shipment)
         {
             var req = PrepareRequest("shipments");
-            var content = new JsonContent(new
-            {
-                order = shipment.Order,
-                products = shipment.Products,
-                gtg = shipment.Gtg,
-                shipped = shipment.Shipped,
-                tracking = shipment.Tracking
-            });
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Post, content);
+            var body = shipment.ToDictionary();
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Post, httpContent);
         }
 
         /// <summary>
@@ -50,18 +46,12 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
         public virtual async Task<ListShipment> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
         {
-            var req = PrepareRequest($"shipments/${shipmentId}");
-            var body = shipmentId.ToDictionary();
-            var content = new JsonContent(new
-            {
-                order = shipment.Order,
-                products = shipment.Products,
-                gtg = shipment.Gtg,
-                shipped = shipment.Shipped,
-                tracking = shipment.Tracking
-            });
+            var req = PrepareRequest($"shipments/{shipmentId}");
+            var body = shipment.ToDictionary();
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ExecuteRequestAsync<ListShipment>(req, HttpMethod.Put, content);
+            return await ExecuteRequestAsync<ListShipment>(req, HttpMethod.Put, httpContent);
         }
 
         /// <summary>
@@ -84,8 +74,10 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public virtual async Task<ShipmentResponse> CompleteShipmentAsync(CompleteShipmentFilter options)
         {
             var req = PrepareRequest("shipment");
-            if (options != null) req.QueryParams.AddRange(options.ToParameters());
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put);
+            var body = options.ToDictionary();
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put, httpContent);
         }
 
         /// <summary>
@@ -110,12 +102,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <returns></returns>
         public virtual async Task<ShipmentResponse> DeleteShipmentAsync(string shipmentId)
         {
-            var options = new List<KeyValuePair<string, object>>()
-            {
-                new KeyValuePair<string, object>("shipmentId", $"{shipmentId}")
-            };
-            var req = PrepareRequest("shipments");
-            req.QueryParams.AddRange(options);
+            var req = PrepareRequest($"shipments/{shipmentId}");
             return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Delete);
         }
     }

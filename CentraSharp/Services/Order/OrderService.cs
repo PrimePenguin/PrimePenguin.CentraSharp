@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
@@ -73,13 +74,13 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// <param name="order">A new <see cref="PrimePenguin.CentraSharp.Services.Order" />. Id should be set to null.</param>
         /// <param name="options">Options for creating the order.</param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<Entities.Order> CreateAsync(CreateOrderFilter order)
+        public virtual async Task<CreateOrderResponse> CreateAsync(CreateOrderFilter order)
         {
             var req = PrepareRequest("order");
             var body = order.ToDictionary();
-            var content = new JsonContent(body);
-
-            return await ExecuteRequestAsync<Entities.Order>(req, HttpMethod.Post, content);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            return await ExecuteRequestAsync<CreateOrderResponse>(req, HttpMethod.Post, httpContent);
         }
 
         /// <summary>

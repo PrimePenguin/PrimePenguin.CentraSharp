@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.1;netstandard1.4;</TargetFrameworks>
-    <AssemblyName>CentraSharp</AssemblyName>
-    <RootNamespace>StarwebSharp</RootNamespace>
-    <Version>0.0.4</Version>
+    <AssemblyName>PrimePenguin.CentraSharp</AssemblyName>
+    <RootNamespace>PrimePenguin.CentraSharp</RootNamespace>
+    <Version>0.0.5</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>
