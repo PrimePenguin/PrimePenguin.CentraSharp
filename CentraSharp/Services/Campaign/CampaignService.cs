@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
@@ -24,6 +25,7 @@ namespace PrimePenguin.CentraSharp.Services.Campaign
         /// Get CampaignList 
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<List<CampaignList>> GetCampaign()
         {
             var req = PrepareRequest("campaigns");
@@ -34,6 +36,7 @@ namespace PrimePenguin.CentraSharp.Services.Campaign
         /// Get Campaign By Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<CampaignList> GetCampaignById(int campaignId)
         {
             var options = new List<KeyValuePair<string, object>>()
@@ -49,6 +52,7 @@ namespace PrimePenguin.CentraSharp.Services.Campaign
         /// Get CampaignSites By Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<CampaignSites> GetCampaignSites(string campaignSiteUri)
         {
             var options = new List<KeyValuePair<string, object>>()
