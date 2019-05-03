@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Services.Product
 {
@@ -8,11 +7,29 @@ namespace PrimePenguin.CentraSharp.Services.Product
     {
         public class Errors
         {
-            public IList<string> productsNotFound { get; set; }
+            /// <summary>
+            /// ProductsNotFound
+            /// </summary>
+            [JsonProperty("productsNotFound")]
+            public IList<string> ProductsNotFound { get; set; }
         }
 
-            public string status { get; set; }
-            public string msg { get; set; }
-            public Errors errors { get; set; }
+        /// <summary>
+        /// Status
+        /// </summary>
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Msg
+        /// </summary>
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
+
+        /// <summary>
+        /// Error
+        /// </summary>
+        [JsonProperty("errors")]
+        public Errors Error { get; set; }
     }
 }

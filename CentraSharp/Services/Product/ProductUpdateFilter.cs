@@ -4,9 +4,12 @@ using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Services.Product
 {
-    public class ProductUpdateFilter:Parameterizable
+    public class ProductUpdateFilter : Parameterizable
     {
-        [JsonProperty("products")] 
+        /// <summary>
+        ///  ProductUpdateOptions
+        /// </summary>
+        [JsonProperty("products")]
         public List<ProductUpdateOptions> ProductUpdateOptions { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using PrimePenguin.CentraSharp.Extensions;
-using PrimePenguin.CentraSharp.Services;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -142,7 +138,6 @@ namespace PrimePenguin.CentraSharp.Entities
         {
             this.Markets = new Dictionary<string, Markets>();
             this.Items = new Dictionary<string, Itemslist>();
-           // this.Categories = new Dictionary<string, Category>();
         }
         /// <summary>
         /// markets
@@ -169,19 +164,13 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("canonicallUri")]
         public string CanonicallUri { get; set; }
 
-        /// <summary>
-        /// Categories
-        /// </summary>
-        //[JsonProperty("categories")]
-        //public Dictionary<string, Category> Categories { get; set; }
-
 
         public Dictionary<string, Category> Categories
         {
             get
             {
                 var json = this.CategoriesJson.ToString();
-                if (json.Length==2)
+                if (json.Length == 2)
                 {
                     return new Dictionary<string, Category>();
                 }
@@ -192,40 +181,79 @@ namespace PrimePenguin.CentraSharp.Entities
             }
         }
 
+        /// <summary>
+        /// CategoriesJson
+        /// </summary>
         [JsonProperty(PropertyName = "categories")]
         public object CategoriesJson { get; set; }
+
         /// <summary>
-        /// relatedProducts
+        /// RelatedProducts
         /// </summary>
         [JsonProperty("relatedProducts")]
-        public List<RelatedProducts> relatedProducts { get; set; }
-
-        
+        public List<RelatedProducts> RelatedProducts { get; set; }
 
     }
 
     public class RelatedProducts
     {
-        public string product { get; set; }
-        public string relation { get; set; }
+        /// <summary>
+        /// Product
+        /// </summary>
+        [JsonProperty("product")]
+        public string Product { get; set; }
+
+        /// <summary>
+        /// Relation
+        /// </summary>
+        [JsonProperty("relation")]
+        public string Relation { get; set; }
     }
     public class Category
     {
-        public string category { get; set; }
-        public string name { get; set; }
-        public string sortOrder { get; set; }
-        public string uri { get; set; }
+        /// <summary>
+        /// Categories
+        /// </summary>
+        [JsonProperty("category")]
+        public string Categories { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// SortOrder
+        /// </summary>
+        [JsonProperty("sortOrder")]
+        public string SortOrder { get; set; }
+
+        /// <summary>
+        /// Uri
+        /// </summary>
+        [JsonProperty("uri")]
+        public string Uri { get; set; }
     }
 
     public class Markets
     {
         public Markets()
         {
-            pricesByPricelist = new Dictionary<string, PriceList>();
+            PricesByPricelist = new Dictionary<string, PriceList>();
         }
 
-        public string stockOfAllItems { get; set; }
-        public Dictionary<string, PriceList>  pricesByPricelist { get; set; }
+        /// <summary>
+        /// StockOfAllItems
+        /// </summary>
+        [JsonProperty("stockOfAllItems")]
+        public string StockOfAllItems { get; set; }
+
+        /// <summary>
+        /// PricesByPricelist
+        /// </summary>
+        [JsonProperty("pricesByPricelist")]
+        public Dictionary<string, PriceList> PricesByPricelist { get; set; }
     }
 
     public class Itemslist
@@ -234,22 +262,80 @@ namespace PrimePenguin.CentraSharp.Entities
         {
             StockByMarket = new Dictionary<string, string>();
         }
-        public string item { get; set; }
-    public string name { get; set; }
-    public string ean { get; set; }
-    public string sku { get; set; }
-    public Dictionary<string, string> StockByMarket { get; set; }
+
+        /// <summary>
+        /// item
+        /// </summary>
+        [JsonProperty("item")]
+        public string Item { get; set; }
+
+        /// <summary>
+        /// name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// ean
+        /// </summary>
+        [JsonProperty("ean")]
+        public string Ean { get; set; }
+
+        /// <summary>
+        /// sku
+        /// </summary>
+        [JsonProperty("sku")]
+        public string Sku { get; set; }
+
+        /// <summary>
+        /// StockByMarket
+        /// </summary>
+        public Dictionary<string, string> StockByMarket { get; set; }
     }
 
 
-public class PriceList
+    public class PriceList
     {
-        public string price { get; set; }
-        public double priceAsNumber { get; set; }
-        public string priceBeforeDiscount { get; set; }
-        public string priceReduction { get; set; }
-        public int discountPercent { get; set; }
-        public bool showAsOnSale { get; set; }
-        public bool newProduct { get; set; }
+        /// <summary>
+        /// price
+        /// </summary>
+        [JsonProperty("price")]
+        public string Price { get; set; }
+
+        /// <summary>
+        /// PriceAsNumber
+        /// </summary>
+        [JsonProperty("priceAsNumber")]
+        public double PriceAsNumber { get; set; }
+
+        /// <summary>
+        /// PriceBeforeDiscount
+        /// </summary>
+        [JsonProperty("priceBeforeDiscount")]
+        public string PriceBeforeDiscount { get; set; }
+
+        /// <summary>
+        /// priceReduction
+        /// </summary>
+        [JsonProperty("priceReduction")]
+        public string PriceReduction { get; set; }
+
+        /// <summary>
+        /// discountPercent
+        /// </summary>
+        [JsonProperty("discountPercent")]
+        public int DiscountPercent { get; set; }
+
+        /// <summary>
+        /// ShowAsOnSale
+        /// </summary>
+        [JsonProperty("showAsOnSale")]
+        public bool ShowAsOnSale { get; set; }
+
+        /// <summary>
+        /// newProduct
+        /// </summary>
+        [JsonProperty("newProduct")]
+        public bool NewProduct { get; set; }
     }
 }
