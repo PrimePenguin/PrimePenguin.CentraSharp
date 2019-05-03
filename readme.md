@@ -22,10 +22,50 @@ dotnet add package PrimePenguin.CentraSharp
 
 # Using PrimePenguin.CentraSharp
 
-**Note**: All instances of `shopAccessToken` in the examples below **do not refer to your Starweb API key**.
-An access token is the token returned after authenticating and authorizing a Starweb app installation with a
+**Note**: All instances of `shopAccessToken` in the examples below **do not refer to your Centra API key**.
+An access token is the token returned after authenticating and authorizing a Centra app installation with a
 real CentraWeb store.
 
+**Steps to get access token for centra**
+```
+
+Open System settings for you centra store By logging into your store
+
+```
+<div align="center">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/SystemSettings.PNG?s=50&v=4">
+</div>
+
+```
+
+Open your store to access the token
+
+```
+<div align="center">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/OpenStore.PNG">
+</div>
+
+```
+
+Open your store settings to access shop token and order token
+
+```
+<div align="center">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/StoreSettings.PNG">
+</div>
+
+```
+
+Copy your store uri and  use access token for respective type
+
+```
+<div align="center">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Copysecret.PNG">
+</div>
+
+**Note**: myCentraWebUrl will be like store url-->https://PrimePenguin.com + /api/+ URI for the API type this will be different for
+ Order and Shop So Kindly use respective token and Uri as per your store settings
+**Final myCentraWebUrl will be likw** : https://PrimePenguin.com/api/shop
 
 ```cs
 var service = new ProductService(myCentraWebUrl, shopAccessToken);
