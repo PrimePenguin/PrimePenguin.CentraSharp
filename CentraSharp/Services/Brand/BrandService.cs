@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
@@ -17,6 +18,7 @@ namespace PrimePenguin.CentraSharp.Services.Brand
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <param name="shopAccessToken">An API access token for the shop.</param>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public BrandService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
@@ -25,6 +27,7 @@ namespace PrimePenguin.CentraSharp.Services.Brand
         /// Get BrandsList and FilterBy Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<Dictionary<string, Brands>> GetBrands(BrandFilter options)
         {
             var req = PrepareRequest("brands");
@@ -38,6 +41,7 @@ namespace PrimePenguin.CentraSharp.Services.Brand
         /// Get MeasurementCharts and FilterBy Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<IList<MeasurementCharts>> GetMeasurementCharts(int measurementChartId)
         {
             var options = new List<KeyValuePair<string, object>>()

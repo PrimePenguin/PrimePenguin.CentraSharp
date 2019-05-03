@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using PrimePenguin.CentraSharp.Filters;
 
 namespace PrimePenguin.CentraSharp.Services.Product
 {
+
     /// <summary>
     /// A service for manipulating Centra products.
     /// </summary>
@@ -17,7 +19,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Creates a new instance of <see cref="CentraService" />.
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
-        /// <param name="shopAccessToken">An API access token for the shop.</param>
+        /// <param name="shopAccessToken">An API access token for the shop. Use ShopAPI token from centra store</param>
         public ProductService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
@@ -26,6 +28,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get List Of Products
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<ProductsList> ListAsync()
         {
             var req = PrepareRequest("products");
@@ -38,6 +41,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<Dictionary<string, ProductsFilter>> GetByFilterAsync(ProductFilter options = null)
         {
             var req = PrepareRequest("products/filter");
@@ -52,6 +56,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<ProductsFilter> GetAsync(long productId)
         {
             var req = PrepareRequest($"products/{productId}");
@@ -63,6 +68,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get product IDs
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<IList<string>> GetProductIDs()
         {
             var req = PrepareRequest("product-ids");
@@ -74,6 +80,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get CollectionList and FilterBy Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<Dictionary<string, CentraCollection>> GetProductCollections(CollectionFilter options)
         {
             var req = PrepareRequest("collections");
@@ -87,6 +94,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="centraStockFilter"></param>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<IList<ProductStockList>> GetStock(StockFilter centraStockFilter)
         {
             var req = PrepareRequest("stock");
@@ -100,6 +108,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productUpdateOptions"></param>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<ProductUpdateRsponse> UpdateAsync(ProductUpdateFilter productUpdateOptions)
         {
             var req = PrepareRequest("stock");

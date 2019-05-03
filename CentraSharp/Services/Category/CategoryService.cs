@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
@@ -17,6 +18,7 @@ namespace PrimePenguin.CentraSharp.Services.Category
         /// </summary>
         /// <param name="myCentraUrl">The shop's *.myCentraUrl.com URL.</param>
         /// <param name="shopAccessToken">An API access token for the shop.</param>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public CategoryService(string myCentraUrl, string shopAccessToken) : base(myCentraUrl, shopAccessToken)
         {
         }
@@ -25,6 +27,7 @@ namespace PrimePenguin.CentraSharp.Services.Category
         /// Get CategoryList and FilterBy Id
         /// </summary>
         /// <returns></returns>
+        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<Dictionary<string, ProductCategory>> GetCategories(CategoryFilter options)
         {
             var req = PrepareRequest("categories");
