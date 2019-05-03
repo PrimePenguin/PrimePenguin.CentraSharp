@@ -122,8 +122,8 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// Categories
         /// </summary>
-        [JsonProperty("categories")]
-        public IList<string> Categories { get; set; }
+        //[JsonProperty("categories")]
+        //public IList<string> Categories { get; set; }
 
         /// <summary>
         /// Images

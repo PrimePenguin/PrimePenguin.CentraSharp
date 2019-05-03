@@ -16,7 +16,7 @@ namespace PrimePenguin.CentraSharp.Services
         private static readonly IRequestExecutionPolicy _globalExecutionPolicy = new DefaultRequestExecutionPolicy();
 
         private static readonly JsonSerializer Serializer = new JsonSerializer
-            {DateParseHandling = DateParseHandling.DateTimeOffset};
+        { DateParseHandling = DateParseHandling.DateTimeOffset };
 
         private readonly IRequestExecutionPolicy _executionPolicy;
 
@@ -70,13 +70,8 @@ namespace PrimePenguin.CentraSharp.Services
 
         protected RequestUri PrepareRequest(string path)
         {
-            var ub = new UriBuilder(ShopUri)
-            {
-                Scheme = "https:",
-                Port = 443,
-                Path = $"api/all-everything/{path}"
-            };
-
+            var ub = new UriBuilder(ShopUri);
+            ub.Path += path;
             return new RequestUri(ub.Uri);
         }
 
@@ -122,12 +117,7 @@ namespace PrimePenguin.CentraSharp.Services
                         //Check for and throw exception when necessary.
                         CheckResponseExceptions(response, rawResult);
 
-                        // This method may fail when the method was Delete, which is intendend.
-                        // Delete methods should not be parsing the response JSON and should instead
-                        // be using the non-generic ExecuteRequestAsync.
-                        var reader = new JsonTextReader(new StringReader(rawResult));
-                        var data = Serializer.Deserialize<JObject>(reader);
-                        var result = data.ToObject<T>();
+                        var result = JsonConvert.DeserializeObject<T>(rawResult);
                         return new RequestResult<T>(response, result, rawResult);
                     }
                 });
@@ -143,7 +133,7 @@ namespace PrimePenguin.CentraSharp.Services
         /// <param name="rawResponse"></param>
         public static void CheckResponseExceptions(HttpResponseMessage response, string rawResponse)
         {
-            var statusCode = (int) response.StatusCode;
+            var statusCode = (int)response.StatusCode;
 
             // No error if response was between 200 and 300.
             if (statusCode >= 200 && statusCode < 300) return;
@@ -154,7 +144,7 @@ namespace PrimePenguin.CentraSharp.Services
             var code = response.StatusCode;
 
             // If the error was caused by reaching the API rate limit, throw a rate limit exception.
-            if ((int) code == 429 /* Too many requests */)
+            if ((int)code == 429 /* Too many requests */)
             {
                 const string listMessage =
                     "Exceeded 2 calls per second for api client. Reduce request rates to resume uninterrupted service.";
@@ -171,7 +161,7 @@ namespace PrimePenguin.CentraSharp.Services
             }
 
             var errors = ParseErrorJson(rawResponse);
-            var message = $"Response did not indicate success. Status: {(int) code} {response.ReasonPhrase}.";
+            var message = $"Response did not indicate success. Status: {(int)code} {response.ReasonPhrase}.";
 
             if (errors == null)
             {
@@ -218,7 +208,7 @@ namespace PrimePenguin.CentraSharp.Services
                     // Error is type #4
                     var description = parsed["error_description"];
 
-                    errors.Add("invalid_request", new List<string> {description.Value<string>()});
+                    errors.Add("invalid_request", new List<string> { description.Value<string>() });
                 }
                 else if (parsed.Any(x => x.Path == "errors"))
                 {
@@ -226,7 +216,7 @@ namespace PrimePenguin.CentraSharp.Services
 
                     //errors can be either a single string, or an array of other errors
                     if (parsedErrors.Type == JTokenType.String)
-                        errors.Add("Error", new List<string> {parsedErrors.Value<string>()});
+                        errors.Add("Error", new List<string> { parsedErrors.Value<string>() });
                     else
                         foreach (var val in parsedErrors.Values())
                         {
@@ -287,7 +277,7 @@ namespace PrimePenguin.CentraSharp.Services
             }
             catch (Exception e)
             {
-                errors.Add(e.Message, new List<string> {json});
+                errors.Add(e.Message, new List<string> { json });
             }
 
             // KVPs are structs and can never be null. Instead, check if the first error equals the default kvp value.

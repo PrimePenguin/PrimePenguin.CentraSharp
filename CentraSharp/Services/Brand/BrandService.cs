@@ -25,12 +25,12 @@ namespace PrimePenguin.CentraSharp.Services.Brand
         /// Get BrandsList and FilterBy Id
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IList<string>> GetBrands(BrandFilter options)
+        public virtual async Task<Dictionary<string, Brands>> GetBrands(BrandFilter options)
         {
             var req = PrepareRequest("brands");
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
-            return await ExecuteRequestAsync<IList<string>>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<Dictionary<string, Brands>>(req, HttpMethod.Get);
         }
 
 
@@ -45,7 +45,11 @@ namespace PrimePenguin.CentraSharp.Services.Brand
                 new KeyValuePair<string, object>("measurementChartId", $"{measurementChartId}")
             };
             var req = PrepareRequest("measurement-charts");
-            req.QueryParams.AddRange(options);
+            if (measurementChartId != 0)
+            {
+                req.QueryParams.AddRange(options);
+            }
+
             return await ExecuteRequestAsync<IList<MeasurementCharts>>(req, HttpMethod.Get);
         }
     }

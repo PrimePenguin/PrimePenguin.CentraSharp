@@ -25,12 +25,12 @@ namespace PrimePenguin.CentraSharp.Services.Category
         /// Get CategoryList and FilterBy Id
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IList<ProductCategory>> GetCategories(CategoryFilter options)
+        public virtual async Task<Dictionary<string, ProductCategory>> GetCategories(CategoryFilter options)
         {
             var req = PrepareRequest("categories");
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
-            return await ExecuteRequestAsync<IList<ProductCategory>>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<Dictionary<string, ProductCategory>>(req, HttpMethod.Get);
         }
     }
 }

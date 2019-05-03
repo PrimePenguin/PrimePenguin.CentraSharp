@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
@@ -38,13 +39,13 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        public virtual async Task<ProductsList> GetByFilterAsync(ProductFilter options = null)
+        public virtual async Task<Dictionary<string, ProductsFilter>> GetByFilterAsync(ProductFilter options = null)
         {
             var req = PrepareRequest("products/filter");
 
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
-            return await ExecuteRequestAsync<ProductsList>(req, HttpMethod.Post);
+            return await ExecuteRequestAsync<Dictionary<string, ProductsFilter>>(req, HttpMethod.Post);
         }
 
         /// <summary>
@@ -52,11 +53,11 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
-        public virtual async Task<ProductsList> GetAsync(long productId)
+        public virtual async Task<ProductsFilter> GetAsync(long productId)
         {
             var req = PrepareRequest($"products/{productId}");
 
-            return await ExecuteRequestAsync<ProductsList>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<ProductsFilter>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -74,12 +75,12 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get CollectionList and FilterBy Id
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IList<CentraCollection>> GetProductCollections(CollectionFilter options)
+        public virtual async Task<Dictionary<string, CentraCollection>> GetProductCollections(CollectionFilter options)
         {
             var req = PrepareRequest("collections");
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
-            return await ExecuteRequestAsync<IList<CentraCollection>>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<Dictionary<string, CentraCollection>>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -100,15 +101,13 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productUpdateOptions"></param>
         /// <returns></returns>
-        public virtual async Task<Entities.Order> UpdateAsync(List<ProductUpdateOptions> productUpdateOptions)
+        public virtual async Task<ProductUpdateRsponse> UpdateAsync(ProductUpdateFilter productUpdateOptions)
         {
             var req = PrepareRequest("stock");
             var body = productUpdateOptions.ToDictionary();
-            var content = new JsonContent(new
-            {
-                body
-            });
-            return await ExecuteRequestAsync<Entities.Order>(req, HttpMethod.Post, content);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            return await ExecuteRequestAsync<ProductUpdateRsponse>(req, HttpMethod.Post, httpContent);
         }
     }
 }
