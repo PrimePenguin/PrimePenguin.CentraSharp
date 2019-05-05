@@ -23,10 +23,10 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// Get List of Supplier Deliveries
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<SupplieDeliveryList> ListSupplierDeliveriesAsync()
+        public virtual async Task<SupplierDeliveryList> ListSupplierDeliveriesAsync()
         {
             var req = PrepareRequest("supplier-deliveries");
-            return await ExecuteRequestAsync<SupplieDeliveryList>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<SupplierDeliveryList>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -34,10 +34,10 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// </summary>
         /// <param name="supplierDeliveryId"></param>
         /// <returns></returns>
-        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryAsync(int supplierDeliveryId)
+        public virtual async Task<Entities.SupplierDelivery> GetSupplierDeliveryAsync(int supplierDeliveryId)
         {
-            var req = PrepareRequest($"supplier-delivery/{supplierDeliveryId}");
-            return await ExecuteRequestAsync<SupplieDeliveryList>(req, HttpMethod.Get);
+            var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}");
+            return await ExecuteRequestAsync<Entities.SupplierDelivery>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -45,10 +45,10 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// </summary>
         /// <param name="supplierDeliveryId"></param>
         /// <returns></returns>
-        public virtual async Task<SupplieDeliveryList> GetSupplierDeliveryDetailsAsync(int supplierDeliveryId)
+        public virtual async Task<Entities.SupplierDelivery> GetSupplierDeliveryDetailsAsync(int supplierDeliveryId)
         {
-            var req = PrepareRequest($"supplier-delivery/{supplierDeliveryId}/details");
-            return await ExecuteRequestAsync<SupplieDeliveryList>(req, HttpMethod.Get);
+            var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}/details");
+            return await ExecuteRequestAsync<Entities.SupplierDelivery>(req, HttpMethod.Get);
         }
 
         /// <summary>

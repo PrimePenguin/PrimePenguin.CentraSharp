@@ -23,10 +23,10 @@ namespace PrimePenguin.CentraSharp.Services.SupplierOrder
         /// </summary>
         /// <param name="supplierOrderId"></param>
         /// <returns></returns>
-        public virtual async Task<ShipmentResponse> GetSupplierOrderAsync(long supplierOrderId)
+        public virtual async Task<SupplierOrderResponse> GetSupplierOrderAsync(long supplierOrderId)
         {
             var req = PrepareRequest($"supplier-orders/{supplierOrderId}");
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<SupplierOrderResponse>(req, HttpMethod.Get);
         }
 
         /// <summary>

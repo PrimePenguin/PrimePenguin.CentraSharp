@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class SupplieDeliveryList
+    public class SupplierDeliveryList
     {
         /// <summary>
         /// Status
@@ -14,7 +14,14 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// SupplierOrders
         /// </summary>
-        [JsonProperty("deliveries ")]
+        [JsonProperty("deliveries")]
         public List<SupplierOrderDelivery> SupplierOrderDeliveries { get; set; }
+
+
+        /// <summary>
+        /// Msg
+        /// </summary>
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
     }
 }
