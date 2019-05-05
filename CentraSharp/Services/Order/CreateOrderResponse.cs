@@ -18,9 +18,15 @@ namespace PrimePenguin.CentraSharp.Services.Order
         public string Msg { get; set; }
 
         /// <summary>
+        /// code
+        /// </summary>
+        [JsonProperty("code")]
+        public int Code { get; set; }
+
+        /// <summary>
         /// Order
         /// </summary>
-        [JsonProperty("order")]
+        [JsonProperty("orders")]
         public List<int> Order { get; set; }
     }
 }
