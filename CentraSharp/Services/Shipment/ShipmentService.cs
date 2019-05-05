@@ -42,14 +42,14 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <param name="shipment"></param>
         /// <param name="shipmentId"></param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<ListShipment> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
+        public virtual async Task<ShipmentResponse> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
         {
             var req = PrepareRequest($"shipments/{shipmentId}");
             var body = shipment.ToDictionary();
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ExecuteRequestAsync<ListShipment>(req, HttpMethod.Put, httpContent);
+            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put, httpContent);
         }
 
         /// <summary>
