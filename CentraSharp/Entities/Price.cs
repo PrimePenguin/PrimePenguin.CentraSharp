@@ -30,9 +30,9 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Currency { get; set; }
 
         /// <summary>
-        /// Campaigns
+        /// Campaign
         /// </summary>
         [JsonProperty("campaigns")]
-        public IList<Campaign> Campaigns { get; set; }
+        public IList<Campaign> Campaign { get; set; }
     }
 }

@@ -62,7 +62,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Weight
         /// </summary>
         [JsonProperty("weight")]
-        public int Weight { get; set; }
+        public double Weight { get; set; }
 
         /// <summary>
         /// WeightUnit
@@ -111,5 +111,17 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("availableStock")]
         public int AvailableStock { get; set; }
+
+        /// <summary>
+        /// OriginalPrice
+        /// </summary>
+        [JsonProperty("costPrice")]
+        public double CostPrice { get; set; }
+
+        /// <summary>
+        /// costPriceCurrency 
+        /// </summary>
+        [JsonProperty("costPriceCurrency")]
+        public string CostPriceCurrency { get; set; }
     }
 }

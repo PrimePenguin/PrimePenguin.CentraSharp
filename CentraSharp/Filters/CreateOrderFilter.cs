@@ -20,9 +20,9 @@ namespace PrimePenguin.CentraSharp.Filters
         public OrderDeliveryAddress DeliveryAddress { get; set; }
 
         /// <summary>
-        /// products included in order
+        /// product included in order
         /// </summary>
         [JsonProperty("products")]
-        public IList<OrderProduct> Products { get; set; }
+        public IList<OrderProduct> Product { get; set; }
     }
 }

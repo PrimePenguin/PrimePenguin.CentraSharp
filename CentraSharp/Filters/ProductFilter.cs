@@ -10,7 +10,7 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Filter by Product IDs, passed as string or array of strings;
         /// </summary>
         [JsonProperty("products")]
-        public IList<string> Products { get; set; }
+        public IList<string> Product { get; set; }
 
         /// <summary>
         /// Filter by Product URI.

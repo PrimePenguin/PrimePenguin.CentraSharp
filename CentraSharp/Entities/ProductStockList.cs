@@ -14,7 +14,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// <see cref="CentraProductStocks" />
         /// </summary>
-        [JsonProperty("centraProductStocks")]
+        [JsonProperty("products")]
         public List<ProductStock> CentraProductStocks { get; set; }
 
         /// <summary>

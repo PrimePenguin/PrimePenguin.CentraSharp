@@ -120,22 +120,22 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Comment { get; set; }
 
         /// <summary>
-        /// Categories
+        /// Category
         /// </summary>
-        //[JsonProperty("categories")]
-        //public IList<string> Categories { get; set; }
+        [JsonProperty("categories")]
+        public IList<string> Category { get; set; }
 
         /// <summary>
-        /// Images
+        /// Image
         /// </summary>
         [JsonProperty("images")]
-        public IList<string> Images { get; set; }
+        public IList<string> Image { get; set; }
 
         /// <summary>
-        /// Prices
+        /// Price
         /// </summary>
         [JsonProperty("prices")]
-        public IList<Price> Prices { get; set; }
+        public IList<Price> Price { get; set; }
 
         /// <summary>
         /// CostPrice
@@ -161,17 +161,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("qty")]
         public string Qty { get; set; }
-
-        /// <summary>
-        /// OriginalPrice
-        /// </summary>
-        [JsonProperty("originalPrice")]
-        public decimal OriginalPrice { get; set; }
-
-        /// <summary>
-        /// Price
-        /// </summary>
-        [JsonProperty("price")]
-        public decimal Price { get; set; }
+       
     }
 }

@@ -12,10 +12,10 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Status { get; set; }
 
         /// <summary>
-        /// Orders
+        /// Order
         /// </summary>
         [JsonProperty("orders")]
-        public IList<Order> Orders { get; set; }
+        public IList<Order> Order { get; set; }
 
         /// <summary>
         /// Orders

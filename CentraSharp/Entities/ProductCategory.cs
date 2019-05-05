@@ -66,10 +66,10 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Category { get; set; }
 
         /// <summary>
-        /// Products
+        /// Product
         /// </summary>
         [JsonProperty("products")]
-        public IList<string> Products { get; set; }
+        public IList<string> Product { get; set; }
 
         /// <summary>
         /// Categories

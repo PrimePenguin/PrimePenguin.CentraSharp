@@ -8,8 +8,8 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// Orders
         /// </summary>
-        [JsonProperty("orders")]
-        public IList<string> Orders { get; set; }
+        [JsonProperty("order")]
+        public IList<string> Order { get; set; }
 
         /// <summary>
         /// Status

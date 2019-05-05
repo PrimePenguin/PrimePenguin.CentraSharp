@@ -94,13 +94,12 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="centraStockFilter"></param>
         /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
-        public virtual async Task<IList<ProductStockList>> GetStock(StockFilter centraStockFilter)
+        public virtual async Task<ProductStockList> GetStock(StockFilter centraStockFilter)
         {
             var req = PrepareRequest("stock");
             if (centraStockFilter != null) req.QueryParams.AddRange(centraStockFilter.ToParameters());
 
-            return await ExecuteRequestAsync<IList<ProductStockList>>(req, HttpMethod.Get);
+            return await ExecuteRequestAsync<ProductStockList>(req, HttpMethod.Get);
         }
 
         /// <summary>
@@ -108,7 +107,6 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="productUpdateOptions"></param>
         /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<ProductUpdateRsponse> UpdateAsync(ProductUpdateFilter productUpdateOptions)
         {
             var req = PrepareRequest("stock");
