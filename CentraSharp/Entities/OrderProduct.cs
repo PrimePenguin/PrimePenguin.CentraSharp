@@ -14,7 +14,13 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Ean
         /// </summary>
         [JsonProperty("ean")]
-        public string Ean { get; set; }
+        public string Ean { get; set; } = null;
+
+        /// <summary>
+        /// Id
+        /// </summary>
+        [JsonProperty("id")]
+        public string Id { get; set; } = null;
 
         /// <summary>
         /// UnitPrice
@@ -38,6 +44,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Sku
         /// </summary>
         [JsonProperty("sku")]
-        public string Sku { get; set; }
+        public string Sku { get; set; } = null;
     }
 }
