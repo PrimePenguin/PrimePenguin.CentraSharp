@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PrimePenguin.CentraSharp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
-using PrimePenguin.CentraSharp.Extensions;
 
 namespace PrimePenguin.CentraSharp.Infrastructure
 {
@@ -68,13 +68,13 @@ namespace PrimePenguin.CentraSharp.Infrastructure
 
             var valueType = value.GetType();
 
-            if (valueType.GetTypeInfo().IsEnum) value = ((Enum) value).ToSerializedString();
+            if (valueType.GetTypeInfo().IsEnum) value = ((Enum)value).ToSerializedString();
 
             //Dates must be serialized in YYYY-MM-DD HH:MM format.
             if (valueType == typeof(DateTime) || valueType == typeof(DateTime?))
-                value = ((DateTime) value).ToString("o");
+                value = ((DateTime)value).ToString("o");
             else if (valueType == typeof(DateTimeOffset) || valueType == typeof(DateTimeOffset?))
-                value = ((DateTimeOffset) value).ToString("o");
+                value = ((DateTimeOffset)value).ToString("o");
 
             return new KeyValuePair<string, object>(propName, value);
         }

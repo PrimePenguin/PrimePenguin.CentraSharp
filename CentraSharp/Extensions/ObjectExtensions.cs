@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Extensions
 {
@@ -32,7 +32,7 @@ namespace PrimePenguin.CentraSharp.Extensions
                     propName = attribute != null ? attribute.PropertyName : property.Name;
                 }
 
-                if (value.GetType().GetTypeInfo().IsEnum) value = ((Enum) value).ToSerializedString();
+                if (value.GetType().GetTypeInfo().IsEnum) value = ((Enum)value).ToSerializedString();
 
                 output.Add(propName, value);
             }

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Infrastructure;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Filters
 {
@@ -23,6 +23,6 @@ namespace PrimePenguin.CentraSharp.Filters
         /// product included in order
         /// </summary>
         [JsonProperty("products")]
-        public IList<OrderProduct> Product { get; set; }
+        public IList<OrderProduct> Products { get; set; }
     }
 }

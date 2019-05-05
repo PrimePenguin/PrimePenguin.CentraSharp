@@ -1,6 +1,6 @@
-﻿using System.Net.Http;
+﻿using PrimePenguin.CentraSharp.Entities;
+using System.Net.Http;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
 
 namespace PrimePenguin.CentraSharp.Services.SupplierOrder
 {

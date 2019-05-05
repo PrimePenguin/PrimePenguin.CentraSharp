@@ -2,7 +2,6 @@
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-
     public class Brands
     {
         /// <summary>
@@ -23,5 +22,4 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("uri")]
         public string Uri { get; set; }
     }
-
 }

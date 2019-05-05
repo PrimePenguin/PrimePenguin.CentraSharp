@@ -1,6 +1,6 @@
-﻿using System.Net.Http;
+﻿using PrimePenguin.CentraSharp.Infrastructure;
+using System.Net.Http;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Services.Return
 {

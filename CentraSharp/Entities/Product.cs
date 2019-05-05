@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -120,22 +120,22 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Comment { get; set; }
 
         /// <summary>
-        /// Category
+        /// Categories
         /// </summary>
         [JsonProperty("categories")]
-        public IList<string> Category { get; set; }
+        public IList<string> Categories { get; set; }
 
         /// <summary>
-        /// Image
+        /// Images
         /// </summary>
         [JsonProperty("images")]
-        public IList<string> Image { get; set; }
+        public IList<string> Images { get; set; }
 
         /// <summary>
-        /// Price
+        /// Prices
         /// </summary>
         [JsonProperty("prices")]
-        public IList<Price> Price { get; set; }
+        public IList<Price> Prices { get; set; }
 
         /// <summary>
         /// CostPrice

@@ -1,15 +1,14 @@
-﻿using System;
+﻿using PrimePenguin.CentraSharp.Entities;
+using PrimePenguin.CentraSharp.Extensions;
+using PrimePenguin.CentraSharp.Filters;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
-using PrimePenguin.CentraSharp.Extensions;
-using PrimePenguin.CentraSharp.Filters;
 
 namespace PrimePenguin.CentraSharp.Services.Product
 {
-
     /// <summary>
     /// A service for manipulating Centra products.
     /// </summary>
@@ -28,7 +27,6 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get List Of Products
         /// </summary>
         /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
         public virtual async Task<ProductsList> ListAsync()
         {
             var req = PrepareRequest("products");

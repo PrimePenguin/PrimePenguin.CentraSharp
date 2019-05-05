@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Services.Customer
 {
@@ -70,7 +70,6 @@ namespace PrimePenguin.CentraSharp.Services.Customer
         /// </summary>
         [JsonProperty("consents")]
         public List<UpdateCustomerConsent> Consents { get; set; }
-
 
         /// <summary>
         /// Return a specific customer.

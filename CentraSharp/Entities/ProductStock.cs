@@ -119,7 +119,7 @@ namespace PrimePenguin.CentraSharp.Entities
         public double CostPrice { get; set; }
 
         /// <summary>
-        /// costPriceCurrency 
+        /// costPriceCurrency
         /// </summary>
         [JsonProperty("costPriceCurrency")]
         public string CostPriceCurrency { get; set; }

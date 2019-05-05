@@ -1,7 +1,7 @@
-﻿using System.Net.Http;
+﻿using Newtonsoft.Json;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Infrastructure
 {

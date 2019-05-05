@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Infrastructure;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Filters
 {

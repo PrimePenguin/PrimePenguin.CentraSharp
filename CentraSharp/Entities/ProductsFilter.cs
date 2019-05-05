@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
     public class ProductsFilter
     {
-
         /// <summary>
         /// product
         /// </summary>
@@ -78,7 +77,6 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("foldersName")]
         public string FoldersName { get; set; }
 
-
         /// <summary>
         /// variantName
         /// </summary>
@@ -133,18 +131,17 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("metaDescription")]
         public string MetaDescription { get; set; }
 
-
         public ProductsFilter()
         {
             this.Markets = new Dictionary<string, Markets>();
             this.Items = new Dictionary<string, Itemslist>();
         }
+
         /// <summary>
         /// markets
         /// </summary>
         [JsonProperty("markets")]
         public Dictionary<string, Markets> Markets { get; set; }
-
 
         /// <summary>
         /// canonicalCategory
@@ -163,7 +160,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("canonicallUri")]
         public string CanonicallUri { get; set; }
-
 
         public Dictionary<string, Category> Categories
         {
@@ -192,7 +188,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("relatedProducts")]
         public List<RelatedProducts> RelatedProducts { get; set; }
-
     }
 
     public class RelatedProducts
@@ -209,6 +204,7 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("relation")]
         public string Relation { get; set; }
     }
+
     public class Category
     {
         /// <summary>
@@ -292,7 +288,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         public Dictionary<string, string> StockByMarket { get; set; }
     }
-
 
     public class PriceList
     {

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -150,12 +149,12 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Created
         /// </summary>
         [JsonProperty("created")]
-        public DateTimeOffset? Created { get; set; }
+        public string Created { get; set; }
 
         /// <summary>
         /// Modified
         /// </summary>
         [JsonProperty("modified")]
-        public DateTimeOffset? Modified { get; set; }
+        public string Modified { get; set; }
     }
 }

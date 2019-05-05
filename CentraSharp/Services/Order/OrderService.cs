@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
+﻿using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Infrastructure;
 using PrimePenguin.CentraSharp.Services.Customer;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PrimePenguin.CentraSharp.Services.Order
 {

@@ -16,6 +16,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("campaign")]
         public string Campaign { get; set; }
+
         /// <summary>
         /// Id
         /// </summary>
@@ -33,8 +34,8 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("markets")]
         public Dictionary<int, Market> Markets { get; set; }
-
     }
+
     public class Errors
     {
         /// <summary>
@@ -63,8 +64,8 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("markets")]
         public Dictionary<int, Market> Markets { get; set; }
-
     }
+
     public class Market
     {
         /// <summary>
@@ -72,7 +73,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("pricelists")]
         public Dictionary<int, Pricelist> Pricelists { get; set; }
-
     }
 
     public class Pricelist
@@ -82,6 +82,5 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("productsOnSale")]
         public List<string> ProductsOnSales { get; set; }
-
     }
 }

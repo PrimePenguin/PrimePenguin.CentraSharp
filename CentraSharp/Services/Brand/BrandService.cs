@@ -1,10 +1,10 @@
-﻿using System;
+﻿using PrimePenguin.CentraSharp.Entities;
+using PrimePenguin.CentraSharp.Extensions;
+using PrimePenguin.CentraSharp.Filters;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
-using PrimePenguin.CentraSharp.Extensions;
-using PrimePenguin.CentraSharp.Filters;
 
 namespace PrimePenguin.CentraSharp.Services.Brand
 {
@@ -35,7 +35,6 @@ namespace PrimePenguin.CentraSharp.Services.Brand
 
             return await ExecuteRequestAsync<Dictionary<string, Brands>>(req, HttpMethod.Get);
         }
-
 
         /// <summary>
         /// Get MeasurementCharts and FilterBy Id

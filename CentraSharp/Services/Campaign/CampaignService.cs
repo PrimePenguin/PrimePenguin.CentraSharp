@@ -1,9 +1,9 @@
-﻿using System;
+﻿using PrimePenguin.CentraSharp.Entities;
+using PrimePenguin.CentraSharp.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
-using PrimePenguin.CentraSharp.Extensions;
 
 namespace PrimePenguin.CentraSharp.Services.Campaign
 {
@@ -22,7 +22,7 @@ namespace PrimePenguin.CentraSharp.Services.Campaign
         }
 
         /// <summary>
-        /// Get CampaignList 
+        /// Get CampaignList
         /// </summary>
         /// <returns></returns>
         [Obsolete(" Use ShopAPI token from centra store")]

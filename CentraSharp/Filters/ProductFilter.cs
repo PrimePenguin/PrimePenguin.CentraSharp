@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Infrastructure;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Filters
 {
@@ -10,7 +10,7 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Filter by Product IDs, passed as string or array of strings;
         /// </summary>
         [JsonProperty("products")]
-        public IList<string> Product { get; set; }
+        public IList<string> Products { get; set; }
 
         /// <summary>
         /// Filter by Product URI.

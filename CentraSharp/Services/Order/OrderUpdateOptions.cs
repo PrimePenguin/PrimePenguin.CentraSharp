@@ -15,6 +15,5 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// </summary>
         [JsonProperty("internalComment")]
         public string InternalComment { get; set; }
-
     }
 }

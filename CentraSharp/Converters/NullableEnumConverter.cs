@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace PrimePenguin.CentraSharp.Converters
 {
@@ -32,8 +32,8 @@ namespace PrimePenguin.CentraSharp.Converters
 
                 if (!enumMember.Any()) continue;
 
-                if (((EnumMemberAttribute) enumMember.First()).Value == reader.Value?.ToString())
-                    return (T) enumVal;
+                if (((EnumMemberAttribute)enumMember.First()).Value == reader.Value?.ToString())
+                    return (T)enumVal;
             }
 
             //No match found. Return null.

@@ -1,10 +1,10 @@
-﻿using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
+﻿using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Infrastructure;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PrimePenguin.CentraSharp.Services.Shipment
 {
@@ -57,7 +57,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        public virtual async Task<ListShipment> ListShipmentAsync(GetShipmentFilter options =null)
+        public virtual async Task<ListShipment> ListShipmentAsync(GetShipmentFilter options = null)
         {
             var req = PrepareRequest("shipments");
             if (options != null) req.QueryParams.AddRange(options.ToParameters());
@@ -88,7 +88,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
             var req = PrepareRequest("capture");
             var content = new JsonContent(new
             {
-                shipment=  shipmentId
+                shipment = shipmentId
             });
             return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put, content);
         }

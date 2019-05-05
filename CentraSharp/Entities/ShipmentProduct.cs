@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -64,13 +64,13 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("harmCode")]
         public string HarmCode { get; set; }
-        
+
         /// <summary>
         /// Name
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         /// <summary>
         /// Comment
         /// </summary>
@@ -78,11 +78,11 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Comment { get; set; }
 
         /// <summary>
-        /// Category
+        /// Categories
         /// </summary>
         [JsonProperty("categories")]
-        public IList<string> Category { get; set; }
-        
+        public IList<string> Categories { get; set; }
+
         /// <summary>
         /// LineId
         /// </summary>
@@ -94,6 +94,5 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("qty")]
         public int Qty { get; set; }
-       
     }
 }

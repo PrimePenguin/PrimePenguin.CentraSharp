@@ -1,8 +1,8 @@
-﻿using System.Net.Http;
+﻿using PrimePenguin.CentraSharp.Entities;
+using PrimePenguin.CentraSharp.Extensions;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using PrimePenguin.CentraSharp.Entities;
-using PrimePenguin.CentraSharp.Extensions;
 
 namespace PrimePenguin.CentraSharp.Services.Customer
 {

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using PrimePenguin.CentraSharp.Infrastructure;
+using PrimePenguin.CentraSharp.Infrastructure.Policies;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using PrimePenguin.CentraSharp.Infrastructure;
-using PrimePenguin.CentraSharp.Infrastructure.Policies;
 
 namespace PrimePenguin.CentraSharp.Services
 {
@@ -149,7 +149,7 @@ namespace PrimePenguin.CentraSharp.Services
                     "Exceeded 2 calls per second for api client. Reduce request rates to resume uninterrupted service.";
                 var rateLimitMessage = $"Error: {listMessage}";
 
-                // centra used to return JSON for rate limit exceptions, but then made an unannounced change and started returing HTML. 
+                // centra used to return JSON for rate limit exceptions, but then made an unannounced change and started returing HTML.
                 // This dictionary is an attempt at preserving what was previously returned.
                 var rateLimitErrors = new Dictionary<string, IEnumerable<string>>
                 {
@@ -227,41 +227,59 @@ namespace PrimePenguin.CentraSharp.Services
                                 case JTokenType.String:
                                     list.Add(val.Value<string>());
                                     break;
+
                                 case JTokenType.Array:
                                     list = val.Values<string>().ToList();
                                     break;
+
                                 case JTokenType.None:
                                     break;
+
                                 case JTokenType.Object:
                                     break;
+
                                 case JTokenType.Constructor:
                                     break;
+
                                 case JTokenType.Property:
                                     break;
+
                                 case JTokenType.Comment:
                                     break;
+
                                 case JTokenType.Integer:
                                     break;
+
                                 case JTokenType.Float:
                                     break;
+
                                 case JTokenType.Boolean:
                                     break;
+
                                 case JTokenType.Null:
                                     break;
+
                                 case JTokenType.Undefined:
                                     break;
+
                                 case JTokenType.Date:
                                     break;
+
                                 case JTokenType.Raw:
                                     break;
+
                                 case JTokenType.Bytes:
                                     break;
+
                                 case JTokenType.Guid:
                                     break;
+
                                 case JTokenType.Uri:
                                     break;
+
                                 case JTokenType.TimeSpan:
                                     break;
+
                                 default:
                                     throw new ArgumentOutOfRangeException();
                             }
