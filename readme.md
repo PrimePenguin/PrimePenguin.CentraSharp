@@ -33,7 +33,7 @@ Open System settings for you centra store By logging into your store
 
 ```
 <div align="center">
-  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/SystemSettings.PNG?s=50&v=4">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Images/SystemSettings.PNG?s=50&v=4">
 </div>
 
 ```
@@ -42,7 +42,7 @@ Open your store to access the token
 
 ```
 <div align="center">
-  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/OpenStore.PNG">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Images/OpenStore.PNG">
 </div>
 
 ```
@@ -51,7 +51,7 @@ Open your store settings to access shop token and order token
 
 ```
 <div align="center">
-  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/StoreSettings.PNG">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Images/StoreSettings.PNG">
 </div>
 
 ```
@@ -60,7 +60,7 @@ Copy your store uri and  use access token for respective type
 
 ```
 <div align="center">
-  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Copysecret.PNG">
+  <img href="#" src="https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Images/Copysecret.PNG">
 </div>
 
 **Note**: myCentraWebUrl will be like store url-->https://PrimePenguin.com + /api/+ URI for the API type this will be different for
