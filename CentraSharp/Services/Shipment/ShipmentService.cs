@@ -83,14 +83,14 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="shipmentId"></param>
         /// <returns></returns>
-        public virtual async Task<ShipmentResponse> CaptureShipmentAsync(string shipmentId)
+        public virtual async Task<CompleteShipmentResponse> CaptureShipmentAsync(string shipmentId)
         {
             var req = PrepareRequest("capture");
             var content = new JsonContent(new
             {
                 shipment = shipmentId
             });
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put, content);
+            return await ExecuteRequestAsync<CompleteShipmentResponse>(req, HttpMethod.Put, content);
         }
 
         /// <summary>
@@ -98,10 +98,10 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="shipmentId"></param>
         /// <returns></returns>
-        public virtual async Task<ShipmentResponse> DeleteShipmentAsync(string shipmentId)
+        public virtual async Task<CompleteShipmentResponse> DeleteShipmentAsync(string shipmentId)
         {
             var req = PrepareRequest($"shipments/{shipmentId}");
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Delete);
+            return await ExecuteRequestAsync<CompleteShipmentResponse>(req, HttpMethod.Delete);
         }
     }
 }

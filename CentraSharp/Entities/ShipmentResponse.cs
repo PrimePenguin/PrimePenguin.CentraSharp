@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -38,7 +39,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Invoice
         /// </summary>
         [JsonProperty("invoice")]
-        public string Invoice { get; set; }
+        public List<string> Invoice { get; set; }
 
         /// <summary>
         /// Msg

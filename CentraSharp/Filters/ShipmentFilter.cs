@@ -16,7 +16,7 @@ namespace PrimePenguin.CentraSharp.Filters
         /// filter by products
         /// </summary>
         [JsonProperty("products")]
-        public List<KeyValuePair<string, int>> Products { get; set; } = null;
+        public Dictionary<int, string> Products { get; set; } = null;
 
         /// <summary>
         /// filter by shipped
