@@ -44,7 +44,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// EstimatedDeliveryDate
         /// </summary>
-        [JsonProperty("EstimatedDeliveryDate")]
+        [JsonProperty("estimatedDeliveryDate")]
         public string EstimatedDeliveryDate { get; set; }
 
         /// <summary>
