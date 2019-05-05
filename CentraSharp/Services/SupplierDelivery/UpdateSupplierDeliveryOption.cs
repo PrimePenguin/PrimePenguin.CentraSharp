@@ -9,6 +9,6 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         /// Products
         /// </summary>
         [JsonProperty("products")]
-        public List<KeyValuePair<string, int>> Products { get; set; } = null;
+        public Dictionary<string, int> Products { get; set; } = null;
     }
 }
