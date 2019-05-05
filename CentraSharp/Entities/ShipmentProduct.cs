@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class ProductStock
+    public class ShipmentProduct
     {
         /// <summary>
         /// Sku
@@ -21,24 +22,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("sizeSku")]
         public string SizeSku { get; set; }
-
-        /// <summary>
-        /// Brand
-        /// </summary>
-        [JsonProperty("brand")]
-        public string Brand { get; set; }
-
-        /// <summary>
-        /// Collection
-        /// </summary>
-        [JsonProperty("collection")]
-        public string Collection { get; set; }
-
-        /// <summary>
-        /// Product
-        /// </summary>
-        [JsonProperty("product")]
-        public string Product { get; set; }
 
         /// <summary>
         /// Variant
@@ -81,47 +64,36 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("harmCode")]
         public string HarmCode { get; set; }
+        
+        /// <summary>
+        /// Name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        
+        /// <summary>
+        /// Comment
+        /// </summary>
+        [JsonProperty("comment")]
+        public string Comment { get; set; }
 
         /// <summary>
-        /// HarmDescription
+        /// Category
         /// </summary>
-        [JsonProperty("harmDescription")]
-        public string HarmDescription { get; set; }
+        [JsonProperty("categories")]
+        public IList<string> Category { get; set; }
+        
+        /// <summary>
+        /// LineId
+        /// </summary>
+        [JsonProperty("lineId")]
+        public string LineId { get; set; }
 
         /// <summary>
-        /// Active
+        /// Qty
         /// </summary>
-        [JsonProperty("active")]
-        public int Active { get; set; }
-
-        /// <summary>
-        /// PhysicalStock
-        /// </summary>
-        [JsonProperty("physicalStock")]
-        public int PhysicalStock { get; set; }
-
-        /// <summary>
-        /// AllocatedStock
-        /// </summary>
-        [JsonProperty("allocatedStock")]
-        public int AllocatedStock { get; set; }
-
-        /// <summary>
-        /// AvailableStock
-        /// </summary>
-        [JsonProperty("availableStock")]
-        public int AvailableStock { get; set; }
-
-        /// <summary>
-        /// OriginalPrice
-        /// </summary>
-        [JsonProperty("costPrice")]
-        public double CostPrice { get; set; }
-
-        /// <summary>
-        /// costPriceCurrency 
-        /// </summary>
-        [JsonProperty("costPriceCurrency")]
-        public string CostPriceCurrency { get; set; }
+        [JsonProperty("qty")]
+        public int Qty { get; set; }
+       
     }
 }

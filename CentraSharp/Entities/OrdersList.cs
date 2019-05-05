@@ -15,7 +15,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Order
         /// </summary>
         [JsonProperty("orders")]
-        public IList<Order> Order { get; set; }
+        public IList<ProductOrder> Order { get; set; }
 
         /// <summary>
         /// Orders

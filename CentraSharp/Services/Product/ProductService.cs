@@ -94,7 +94,7 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// </summary>
         /// <param name="centraStockFilter"></param>
         /// <returns></returns>
-        public virtual async Task<ProductStockList> GetStock(StockFilter centraStockFilter)
+        public virtual async Task<ProductStockList> GetStock(StockFilter centraStockFilter = null)
         {
             var req = PrepareRequest("stock");
             if (centraStockFilter != null) req.QueryParams.AddRange(centraStockFilter.ToParameters());

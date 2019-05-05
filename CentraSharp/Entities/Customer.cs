@@ -45,7 +45,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// ZipCode
         /// </summary>
-        [JsonProperty("ZipCode")]
+        [JsonProperty("zipCode")]
         public string ZipCode { get; set; }
 
         /// <summary>

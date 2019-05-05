@@ -258,9 +258,81 @@ namespace PrimePenguin.CentraSharp.Entities
         public string OtherComment { get; set; }
 
         /// <summary>
+        /// billingName
+        /// </summary>
+        [JsonProperty("billingName")]
+        public string BillingName { get; set; }
+
+        /// <summary>
+        /// billingCompany
+        /// </summary>
+        [JsonProperty("billingCompany")]
+        public string BillingCompany { get; set; }
+
+        /// <summary>
+        /// billingAddress
+        /// </summary>
+        [JsonProperty("billingAddress")]
+        public string BillingAddress { get; set; }
+
+        /// <summary>
+        /// BillingCoAddress
+        /// </summary>
+        [JsonProperty("billingCoaddress")]
+        public string BillingCoAddress { get; set; }
+
+        /// <summary>
+        /// billingCity
+        /// </summary>
+        [JsonProperty("billingCity")]
+        public string BillingCity { get; set; }
+
+        /// <summary>
+        /// billingState
+        /// </summary>
+        [JsonProperty("billingState")]
+        public string BillingState { get; set; }
+
+        /// <summary>
+        /// billingZipcode
+        /// </summary>
+        [JsonProperty("billingZipcode")]
+        public string BillingZipcode { get; set; }
+
+        /// <summary>
+        /// billingCountry
+        /// </summary>
+        [JsonProperty("billingCountry")]
+        public string BillingCountry { get; set; }
+
+        /// <summary>
+        /// billingEmail
+        /// </summary>
+        [JsonProperty("billingEmail")]
+        public string BillingEmail { get; set; }
+
+        /// <summary>
+        /// billingTele
+        /// </summary>
+        [JsonProperty("billingTele")]
+        public string BillingTele { get; set; }
+
+        /// <summary>
+        /// pickupPointOpt
+        /// </summary>
+        [JsonProperty("pickupPointOpt")]
+        public bool PickupPointOpt { get; set; }
+
+        /// <summary>
+        /// gtg
+        /// </summary>
+        [JsonProperty("gtg")]
+        public int gtg { get; set; }
+
+        /// <summary>
         /// Products
         /// </summary>
         [JsonProperty("products")]
-        public List<Product> Products { get; set; }
+        public List<ShipmentProduct> Products { get; set; }
     }
 }

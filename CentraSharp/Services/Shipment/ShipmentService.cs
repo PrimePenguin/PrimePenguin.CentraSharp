@@ -57,7 +57,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        public virtual async Task<ListShipment> ListShipmentAsync(GetShipmentFilter options)
+        public virtual async Task<ListShipment> ListShipmentAsync(GetShipmentFilter options =null)
         {
             var req = PrepareRequest("shipments");
             if (options != null) req.QueryParams.AddRange(options.ToParameters());

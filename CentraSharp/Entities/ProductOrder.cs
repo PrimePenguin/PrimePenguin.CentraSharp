@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
-    public class ProductStock
+    public class ProductOrder
     {
         /// <summary>
         /// Sku
@@ -27,18 +28,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("brand")]
         public string Brand { get; set; }
-
-        /// <summary>
-        /// Collection
-        /// </summary>
-        [JsonProperty("collection")]
-        public string Collection { get; set; }
-
-        /// <summary>
-        /// Product
-        /// </summary>
-        [JsonProperty("product")]
-        public string Product { get; set; }
 
         /// <summary>
         /// Variant
@@ -83,45 +72,47 @@ namespace PrimePenguin.CentraSharp.Entities
         public string HarmCode { get; set; }
 
         /// <summary>
-        /// HarmDescription
+        /// Name
         /// </summary>
-        [JsonProperty("harmDescription")]
-        public string HarmDescription { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
 
         /// <summary>
-        /// Active
+        /// Comment
         /// </summary>
-        [JsonProperty("active")]
-        public int Active { get; set; }
+        [JsonProperty("comment")]
+        public string Comment { get; set; }
 
         /// <summary>
-        /// PhysicalStock
+        /// Category
         /// </summary>
-        [JsonProperty("physicalStock")]
-        public int PhysicalStock { get; set; }
+        [JsonProperty("categories")]
+        public IList<string> Category { get; set; }
+        
+        /// <summary>
+        /// LineId
+        /// </summary>
+        [JsonProperty("lineId")]
+        public string LineId { get; set; }
 
         /// <summary>
-        /// AllocatedStock
+        /// Qty
         /// </summary>
-        [JsonProperty("allocatedStock")]
-        public int AllocatedStock { get; set; }
+        [JsonProperty("qty")]
+        public string Qty { get; set; }
 
         /// <summary>
-        /// AvailableStock
+        /// price
         /// </summary>
-        [JsonProperty("availableStock")]
-        public int AvailableStock { get; set; }
+        [JsonProperty("price")]
+        public string Price { get; set; }
 
         /// <summary>
         /// OriginalPrice
         /// </summary>
-        [JsonProperty("costPrice")]
-        public double CostPrice { get; set; }
+        [JsonProperty("originalPrice")]
+        public string OriginalPrice { get; set; }
 
-        /// <summary>
-        /// costPriceCurrency 
-        /// </summary>
-        [JsonProperty("costPriceCurrency")]
-        public string CostPriceCurrency { get; set; }
     }
 }

@@ -86,7 +86,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// <summary>
         /// HarmDescription
         /// </summary>
-        [JsonProperty("HarmDescription")]
+        [JsonProperty("harmDescription")]
         public string HarmDescription { get; set; }
 
         /// <summary>
@@ -148,19 +148,5 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("costPriceCurrency")]
         public string CostPriceCurrency { get; set; }
-
-        /// <summary>
-        /// LineId
-        /// </summary>
-        [JsonProperty("lineId")]
-        public string LineId { get; set; }
-
-
-        /// <summary>
-        /// Qty
-        /// </summary>
-        [JsonProperty("qty")]
-        public string Qty { get; set; }
-       
     }
 }
