@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimePenguin.CentraSharp", "CentraSharp\PrimePenguin.CentraSharp.csproj", "{220306A6-0BA1-485E-A8EE-A080F900D906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{2D058493-B278-4536-B62E-63C94C3CB42C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{220306A6-0BA1-485E-A8EE-A080F900D906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{220306A6-0BA1-485E-A8EE-A080F900D906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{220306A6-0BA1-485E-A8EE-A080F900D906}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D058493-B278-4536-B62E-63C94C3CB42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D058493-B278-4536-B62E-63C94C3CB42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D058493-B278-4536-B62E-63C94C3CB42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D058493-B278-4536-B62E-63C94C3CB42C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
