@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using PrimePenguin.CentraSharp.Infrastructure;
-using System;
 
 namespace PrimePenguin.CentraSharp.Filters
 {
@@ -34,12 +33,12 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Return order newer than date (YYYY-MM-DD).
         /// </summary>
         [JsonProperty("newer_than")]
-        public DateTime? NewerThan { get; set; }
+        public string NewerThan { get; set; }
 
         /// <summary>
         /// Return order newer than date (YYYY-MM-DD).
         /// </summary>
         [JsonProperty("older_than")]
-        public DateTime? OlderThan { get; set; }
+        public string OlderThan { get; set; }
     }
 }

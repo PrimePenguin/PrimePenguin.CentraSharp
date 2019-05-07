@@ -71,12 +71,12 @@ Copy your store uri and  use access token for respective type
 var service = new ProductService(myCentraWebUrl, shopAccessToken);
 ```
 # APIS Token Use-Shop API Token (Obsolete)
-- ProductService
 - CategoryService
 - BrandService
 - CampaignService
 
 # APIS Token Use-Order API Token
+- ProductService
 - OrderService
 - ReturnService
 - ShipmentService
