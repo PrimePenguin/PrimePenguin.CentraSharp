@@ -123,7 +123,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// GrandTotalValue
         /// </summary>
         [JsonProperty("grandTotalValue")]
-        public int GrandTotalValue { get; set; }
+        public double GrandTotalValue { get; set; }
 
         /// <summary>
         /// GrandTotalTaxValue
@@ -267,6 +267,6 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Products
         /// </summary>
         [JsonProperty("products")]
-        public IList<Product> Products { get; set; }
+        public IList<ProductOrder> Products { get; set; }
     }
 }
