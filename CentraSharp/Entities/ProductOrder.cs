@@ -98,18 +98,18 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Qty
         /// </summary>
         [JsonProperty("qty")]
-        public string Qty { get; set; }
+        public int Qty { get; set; }
 
         /// <summary>
         /// price
         /// </summary>
         [JsonProperty("price")]
-        public string Price { get; set; }
+        public int Price { get; set; }
 
         /// <summary>
         /// OriginalPrice
         /// </summary>
         [JsonProperty("originalPrice")]
-        public string OriginalPrice { get; set; }
+        public int OriginalPrice { get; set; }
     }
 }

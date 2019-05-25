@@ -1,12 +1,12 @@
-﻿using PrimePenguin.CentraSharp.Entities;
+﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
 using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Infrastructure;
 using PrimePenguin.CentraSharp.Services.Customer;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PrimePenguin.CentraSharp.Services.Order
 {
@@ -42,7 +42,7 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// Retrieves the order with the given id.
         /// </summary>
         /// <param name="orderId">The id of the order to retrieve.</param>
-        /// <returns>The <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
+        /// <returns>The <see cref="Order" />.</returns>
         public virtual async Task<OrdersList> GetAsync(int orderId)
         {
             var options = new List<KeyValuePair<string, object>>()
@@ -69,11 +69,10 @@ namespace PrimePenguin.CentraSharp.Services.Order
         }
 
         /// <summary>
-        /// Creates a new <see cref="PrimePenguin.CentraSharp.Services.Order" /> on the store.
+        /// Creates a new <see cref="Order" /> on the store.
         /// </summary>
-        /// <param name="order">A new <see cref="PrimePenguin.CentraSharp.Services.Order" />. Id should be set to null.</param>
-        /// <param name="options">Options for creating the order.</param>
-        /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
+        /// <param name="order">A new <see cref="Order" />. Id should be set to null.</param>
+        /// <returns>The new <see cref="Order" />.</returns>
         public virtual async Task<CreateOrderResponse> CreateAsync(CreateOrderFilter order)
         {
             var req = PrepareRequest("order");
@@ -84,11 +83,11 @@ namespace PrimePenguin.CentraSharp.Services.Order
         }
 
         /// <summary>
-        /// Complete the given <see cref="PrimePenguin.CentraSharp.Services.Order" />.
+        /// Complete the given <see cref="Order" />.
         /// </summary>
         /// <param name="orderId">Id of the object being updated.</param>
         /// <param name="comment"></param>
-        /// <returns>The updated <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
+        /// <returns>The updated <see cref="Order" />.</returns>
         public virtual async Task<CompleteOrderResponse> CompleteOrderAsync(long orderId, string comment)
         {
             var req = PrepareRequest($"order/{orderId}");
