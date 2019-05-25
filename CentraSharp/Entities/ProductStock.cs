@@ -11,6 +11,12 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Sku { get; set; }
 
         /// <summary>
+        /// Variant Id
+        /// </summary>
+        [JsonProperty("variantId")]
+        public int VariantId { get; set; }
+
+        /// <summary>
         /// VariantSku
         /// </summary>
         [JsonProperty("variantSku")]
@@ -39,6 +45,12 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("product")]
         public string Product { get; set; }
+
+        /// <summary>
+        /// ProductId
+        /// </summary>
+        [JsonProperty("productId")]
+        public int ProductId { get; set; }
 
         /// <summary>
         /// Variant
