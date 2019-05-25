@@ -27,75 +27,24 @@ namespace PrimePenguin.CentraSharp.Services.Product
         /// Get List Of Products
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<ProductsList> ListAsync()
+        public virtual async Task<ProductsList> ListAsync(ProductListFilter options = null)
         {
             var req = PrepareRequest("products");
+
+            if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
             return await ExecuteRequestAsync<ProductsList>(req, HttpMethod.Get);
         }
 
         /// <summary>
-        /// Get Products By Filter.
+        /// Get Stock of Product
         /// </summary>
         /// <param name="options"></param>
         /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
-        public virtual async Task<Dictionary<string, ProductsFilter>> GetByFilterAsync(ProductFilter options = null)
-        {
-            var req = PrepareRequest("products/filter");
-
-            if (options != null) req.QueryParams.AddRange(options.ToParameters());
-
-            return await ExecuteRequestAsync<Dictionary<string, ProductsFilter>>(req, HttpMethod.Post);
-        }
-
-        /// <summary>
-        /// Get Product By ID
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
-        public virtual async Task<ProductsFilter> GetAsync(long productId)
-        {
-            var req = PrepareRequest($"products/{productId}");
-
-            return await ExecuteRequestAsync<ProductsFilter>(req, HttpMethod.Get);
-        }
-
-        /// <summary>
-        /// Get product IDs
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
-        public virtual async Task<IList<string>> GetProductIDs()
-        {
-            var req = PrepareRequest("product-ids");
-
-            return await ExecuteRequestAsync<IList<string>>(req, HttpMethod.Get);
-        }
-
-        /// <summary>
-        /// Get CollectionList and FilterBy Id
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete(" Use ShopAPI token from centra store")]
-        public virtual async Task<Dictionary<string, CentraCollection>> GetProductCollections(CollectionFilter options)
-        {
-            var req = PrepareRequest("collections");
-            if (options != null) req.QueryParams.AddRange(options.ToParameters());
-
-            return await ExecuteRequestAsync<Dictionary<string, CentraCollection>>(req, HttpMethod.Get);
-        }
-
-        /// <summary>
-        /// Get Stock of Product
-        /// </summary>
-        /// <param name="centraStockFilter"></param>
-        /// <returns></returns>
-        public virtual async Task<ProductStockList> GetStock(StockFilter centraStockFilter = null)
+        public virtual async Task<ProductStockList> GetStock(ProductListFilter options = null)
         {
             var req = PrepareRequest("stock");
-            if (centraStockFilter != null) req.QueryParams.AddRange(centraStockFilter.ToParameters());
+            if (options != null) req.QueryParams.AddRange(options.ToParameters());
 
             return await ExecuteRequestAsync<ProductStockList>(req, HttpMethod.Get);
         }
