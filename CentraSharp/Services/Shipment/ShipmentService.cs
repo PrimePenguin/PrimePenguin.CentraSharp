@@ -27,13 +27,13 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="shipment"></param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<ShipmentResponse> CreateShipmentAsync(ShipmentFilter shipment)
+        public virtual async Task<CreateUpdateShipmentResponse> CreateShipmentAsync(ShipmentFilter shipment)
         {
             var req = PrepareRequest("shipments");
             var body = shipment.ToDictionary();
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Post, httpContent);
+            return await ExecuteRequestAsync<CreateUpdateShipmentResponse>(req, HttpMethod.Post, httpContent);
         }
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <param name="shipment"></param>
         /// <param name="shipmentId"></param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<ShipmentResponse> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
+        public virtual async Task<CreateUpdateShipmentResponse> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
         {
             var req = PrepareRequest($"shipments/{shipmentId}");
             var body = shipment.ToDictionary();
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            return await ExecuteRequestAsync<ShipmentResponse>(req, HttpMethod.Put, httpContent);
+            return await ExecuteRequestAsync<CreateUpdateShipmentResponse>(req, HttpMethod.Put, httpContent);
         }
 
         /// <summary>

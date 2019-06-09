@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using PrimePenguin.CentraSharp.Converters;
+using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -143,11 +145,11 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("categories")]
         public IList<string> Categories { get; set; }
 
-        /// <summary>
-        /// Images
-        /// </summary>
-        [JsonProperty("images")]
-        public IList<string> Images { get; set; }
+        ///// <summary>
+        ///// Images
+        ///// </summary>
+        //[JsonProperty("images")]
+        //public IList<string> Images { get; set; }
 
         /// <summary>
         /// Prices

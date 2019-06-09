@@ -15,7 +15,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Price
         /// </summary>
         [JsonProperty("price")]
-        public int Prices { get; set; }
+        public double Prices { get; set; }
 
         /// <summary>
         /// PriceList

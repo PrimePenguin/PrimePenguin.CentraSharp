@@ -6,39 +6,45 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
     public class CompleteShipmentFilter : Parameterizable
     {
         /// <summary>
-        /// Shipment
+        /// Shipment ID for the shipment to complete.
         /// </summary>
         [JsonProperty("shipment")]
         public string Shipment { get; set; }
 
         /// <summary>
-        /// Carrier
+        /// Carrier used for shipping.
         /// </summary>
         [JsonProperty("carrier")]
         public string Carrier { get; set; }
 
         /// <summary>
-        /// Service
+        /// Service level used for shipping.
         /// </summary>
         [JsonProperty("service")]
         public string Service { get; set; }
 
         /// <summary>
-        /// Packages
+        /// Number of packages in shipment.
         /// </summary>
         [JsonProperty("packages")]
-        public int Packages { get; set; }
+        public int? Packages { get; set; }
 
         /// <summary>
-        /// TrackingNumber
+        /// Tracking number for shipment.
         /// </summary>
-        [JsonProperty("trackingNumber")]
-        public string TrackingNumber { get; set; }
+        [JsonProperty("tracking")]
+        public string Tracking { get; set; }
 
         /// <summary>
-        /// Capture
+        /// Append some text to internal comment field.
+        /// </summary>
+        [JsonProperty("internalComment")]
+        public string InternalComment { get; set; }
+
+        /// <summary>
+        /// Default: true. Try to capture the order. Ignored if the capture was already made earlier for the shipment.
         /// </summary>
         [JsonProperty("capture")]
-        public int Capture { get; set; }
+        public int? Capture { get; set; }
     }
 }

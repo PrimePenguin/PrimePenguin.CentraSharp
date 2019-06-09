@@ -35,5 +35,17 @@ namespace PrimePenguin.CentraSharp.Filters
         /// </summary>
         [JsonProperty("limit")]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// Variant Id
+        /// </summary>
+        [JsonProperty("variantId")]
+        public int? VariantId { get; set; }
+
+        /// <summary>
+        /// ProductId
+        /// </summary>
+        [JsonProperty("productId")]
+        public int? ProductId { get; set; }
     }
 }
