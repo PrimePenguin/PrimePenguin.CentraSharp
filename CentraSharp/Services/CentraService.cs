@@ -116,7 +116,10 @@ namespace PrimePenguin.CentraSharp.Services
                         //Check for and throw exception when necessary.
                         CheckResponseExceptions(response, rawResult);
 
-                        var result = JsonConvert.DeserializeObject<T>(rawResult);
+                        var result = JsonConvert.DeserializeObject<T>(rawResult, new JsonSerializerSettings
+                        {
+                            Error = (sender, args) => { args.ErrorContext.Handled = true; }
+                        });
                         return new RequestResult<T>(response, result, rawResult);
                     }
                 });
