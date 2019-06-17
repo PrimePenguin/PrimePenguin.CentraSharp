@@ -1,6 +1,5 @@
 ﻿using PrimePenguin.CentraSharp.Entities;
 using PrimePenguin.CentraSharp.Extensions;
-using PrimePenguin.CentraSharp.Filters;
 using PrimePenguin.CentraSharp.Infrastructure;
 using System.Net.Http;
 using System.Text;
@@ -27,7 +26,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         /// <param name="shipment"></param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<CreateUpdateShipmentResponse> CreateShipmentAsync(ShipmentFilter shipment)
+        public virtual async Task<CreateUpdateShipmentResponse> CreateShipmentAsync(CreateShipmentOptions shipment)
         {
             var req = PrepareRequest("shipments");
             var body = shipment.ToDictionary();
@@ -42,7 +41,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <param name="shipment"></param>
         /// <param name="shipmentId"></param>
         /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
-        public virtual async Task<CreateUpdateShipmentResponse> UpdateShipmentAsync(ShipmentFilter shipment, string shipmentId)
+        public virtual async Task<CreateUpdateShipmentResponse> UpdateShipmentAsync(UpdateShipmentOptions shipment, string shipmentId)
         {
             var req = PrepareRequest($"shipments/{shipmentId}");
             var body = shipment.ToDictionary();
@@ -71,7 +70,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <returns></returns>
         public virtual async Task<CompleteShipmentResponse> CompleteShipmentAsync(CompleteShipmentFilter options)
         {
-            var req = PrepareRequest("shipment");
+            var req = PrepareRequest($"shipments/{options.Shipment}");
             var body = options.ToDictionary();
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");

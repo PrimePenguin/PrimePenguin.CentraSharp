@@ -23,9 +23,9 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public int Order { get; set; }
 
         /// <summary>
-        /// Shipment
+        /// Shipments
         /// </summary>
         [JsonProperty("shipment")]
-        public string Shipment { get; set; }
+        public Entities.Shipment Shipment { get; set; }
     }
 }
