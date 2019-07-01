@@ -17,7 +17,7 @@ Install-Package PrimePenguin.CentraSharp
 If you're using .NET Core, you can use the `dotnet` command from your favorite shell:
 
 ```
-dotnet add package PrimePenguin.CentraSharp
+dotnet add package CentraSharp
 ```
 
 # Using PrimePenguin.CentraSharp
