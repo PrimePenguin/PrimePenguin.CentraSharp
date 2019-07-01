@@ -19,13 +19,8 @@ skip_commits:
     - changelog.md
 deploy:
 - provider: NuGet
-  server: https://www.myget.org/F/primepenguin-centrasharp/api/v2/package
   api_key:
-    secure: jXdWHOx5j3gdlvz0NgLl9oIFOqQ/ANEcSerzq7o7sWvCkISlh59J4lblckoOezH4
-  skip_symbols: true
+    secure: J2kg5DWTve4wj8MHMV4JUo0TOTMpRB4S64fn4FArSzU1SDHk0hSlfhIELrZFvsnD
   on:
     branch: master
-- provider: NuGet
-  api_key:
-    secure: SF6fJ0FWMIBt2bASGT1L4KFHJyKkla3Z8GTq11Wovy8jWbnNqzB4AG9vlFJ/nvw4
-  artifact: PrimePenguin.CentraSharp.nupkg
+    appveyor_repo_tag: true
