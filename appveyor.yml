@@ -4,6 +4,8 @@ pull_requests:
 image: Visual Studio 2017
 build_script:
 - ps: ./scripts/build.ps1
+environment:
+  APPVEYOR_REPO_TAG: true
 artifacts:
 - path: CentraSharp/bin/Release/netstandard1.4
   name: netstandard16
@@ -20,7 +22,6 @@ skip_commits:
 deploy:
 - provider: NuGet
   api_key:
-    secure: J2kg5DWTve4wj8MHMV4JUo0TOTMpRB4S64fn4FArSzU1SDHk0hSlfhIELrZFvsnD
+    secure: Gcoshd09eB+WOeRY65vdsdg5Zy6vXKLXad7cVBkp9uxxkPEp+qDziOFJ8xW7rcTz
   on:
     branch: master
-    appveyor_repo_tag: true

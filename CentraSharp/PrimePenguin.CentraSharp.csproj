@@ -3,11 +3,11 @@
     <TargetFrameworks>netcoreapp2.1;netstandard1.4;</TargetFrameworks>
     <AssemblyName>PrimePenguin.CentraSharp</AssemblyName>
     <RootNamespace>PrimePenguin.CentraSharp</RootNamespace>
-    <Version>0.2.2</Version>
+    <Version>0.3.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>
-    <Authors>Prime Penguin</Authors>
+    <Authors>Ajay Kumar</Authors>
     <Copyright>Prime Penguin</Copyright>
     <PackageLicenseUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/PrimePenguin/PrimePenguin.CentraSharp</PackageProjectUrl>
@@ -16,8 +16,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIconUrl>https://raw.githubusercontent.com/PrimePenguin/PrimePenguin.CentraSharp/master/Images/PrimePenguin.png</PackageIconUrl>
     <Company>Prime Penguin</Company>
-    <PackageId>PrimePenguin.CentraSharp</PackageId>
-    <Product>PrimePenguin.CentraSharp</Product>
+    <PackageId>CentraSharp</PackageId>
+    <Product>CentraSharp</Product>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="microsoft.extensions.primitives" Version="1.1.0" />
