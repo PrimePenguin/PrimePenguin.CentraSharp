@@ -37,7 +37,7 @@ namespace PrimePenguin.CentraSharp.Services.Return
         /// Creates a return for the order on the store.
         /// </summary>
         /// <param name="returnOptions"></param>
-        /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
+        /// <returns>The new <see cref="CentraReturnResponse" />.</returns>
         public virtual async Task<CentraReturnResponse> CreateReturnAsync(CentraReturnOptions returnOptions)
         {
             var req = PrepareRequest("return");
