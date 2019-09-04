@@ -1,6 +1,9 @@
 ﻿using PrimePenguin.CentraSharp.Infrastructure;
 using System.Net.Http;
 using System.Threading.Tasks;
+using PrimePenguin.CentraSharp.Entities;
+using PrimePenguin.CentraSharp.Extensions;
+using PrimePenguin.CentraSharp.Filters;
 
 namespace PrimePenguin.CentraSharp.Services.Return
 {
@@ -19,10 +22,22 @@ namespace PrimePenguin.CentraSharp.Services.Return
         }
 
         /// <summary>
+        /// Gets a list of the returns.
+        /// </summary>
+        /// <param name="options">Options for filtering the list.</param>
+        /// <returns>The list of returns matching the filter.</returns>
+        public virtual async Task<ReturnCollection> ListAsync(ReturnFilter options = null)
+        {
+            var req = PrepareRequest("returns");
+            if (options != null) req.QueryParams.AddRange(options.ToParameters());
+            return await ExecuteRequestAsync<ReturnCollection>(req, HttpMethod.Get);
+        }
+
+        /// <summary>
         /// Creates a return for the order on the store.
         /// </summary>
         /// <param name="returnOptions"></param>
-        /// <returns>The new <see cref="Order" />.</returns>
+        /// <returns>The new <see cref="PrimePenguin.CentraSharp.Services.Order" />.</returns>
         public virtual async Task<CentraReturnResponse> CreateReturnAsync(CentraReturnOptions returnOptions)
         {
             var req = PrepareRequest("return");
