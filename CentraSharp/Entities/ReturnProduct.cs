@@ -89,7 +89,7 @@ namespace PrimePenguin.CentraSharp.Entities
         public int Quantity { get; set; }
 
         /// <summary>
-        /// Quantity of this specific product item returned.
+        /// Price of this specific product item returned.
         /// </summary>
         [JsonProperty("price")]
         public double Price { get; set; }

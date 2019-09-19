@@ -52,11 +52,5 @@ namespace PrimePenguin.CentraSharp.Filters
         /// </summary>
         [JsonProperty("older_than")]
         public string OlderThan { get; set; }
-
-        /// <summary>
-        /// Response in xml format instead of json.
-        /// </summary>
-        [JsonProperty("xml")]
-        public bool XmlResponse { get; set; }
     }
 }
