@@ -123,7 +123,6 @@ namespace PrimePenguin.CentraSharp.Services
                         return new RequestResult<T>(response, result, rawResult);
                     }
                 });
-
                 return policyResult;
             }
         }
