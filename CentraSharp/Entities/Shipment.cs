@@ -6,19 +6,19 @@ namespace PrimePenguin.CentraSharp.Entities
     public class Shipment
     {
         /// <summary>
-        /// OrderId
+        /// Id of the order.
         /// </summary>
         [JsonProperty("orderId")]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// SelectionId
+        /// Selection ID of the order.
         /// </summary>
         [JsonProperty("selectionId")]
         public string SelectionId { get; set; }
 
         /// <summary>
-        /// OrderDate
+        /// Date when order was created.
         /// </summary>
         [JsonProperty("orderDate")]
         public string OrderDate { get; set; }
@@ -54,7 +54,7 @@ namespace PrimePenguin.CentraSharp.Entities
         public string OrderCurrency { get; set; }
 
         /// <summary>
-        /// ShipmentId
+        /// Id of the shipment.
         /// </summary>
         [JsonProperty("shipmentId")]
         public string ShipmentId { get; set; }
@@ -156,43 +156,43 @@ namespace PrimePenguin.CentraSharp.Entities
         public string ShippingList { get; set; }
 
         /// <summary>
-        /// ShippingTerms
+        /// Shipping Terms object selected on this shipment.
         /// </summary>
         [JsonProperty("shippingTerms")]
         public ShippingTerms ShippingTerms { get; set; }
 
         /// <summary>
-        /// PaymentTerms
+        /// Payment Terms object selected on this shipment.
         /// </summary>
         [JsonProperty("paymentTerms")]
         public PaymentTerms PaymentTerms { get; set; }
 
         /// <summary>
-        /// Proforma
+        /// URL to a PDF proforma for the shipment.
         /// </summary>
         [JsonProperty("proforma")]
         public string Proforma { get; set; }
 
         /// <summary>
-        /// DeliveryNote
+        /// URL to a PDF delivery note for the shipment.
         /// </summary>
         [JsonProperty("deliveryNote")]
         public string DeliveryNote { get; set; }
 
         /// <summary>
-        /// DefaultCarrier
+        /// Name of the carrier for this shipment.
         /// </summary>
         [JsonProperty("defaultCarrier")]
         public string DefaultCarrier { get; set; }
 
         /// <summary>
-        /// DeliveryService
+        /// Name of the delivery service for this shipment
         /// </summary>
         [JsonProperty("deliveryService")]
         public string DeliveryService { get; set; }
 
         /// <summary>
-        /// Invoices
+        /// URLs to PDF invoices for the shipment. Will only be set if any invoices exists.
         /// </summary>
         [JsonProperty("invoices")]
         public List<string> Invoices { get; set; }
@@ -216,7 +216,7 @@ namespace PrimePenguin.CentraSharp.Entities
         public int Paid { get; set; }
 
         /// <summary>
-        /// ShouldCapture
+        /// If the shipment needs to be captured before being shipped
         /// </summary>
         [JsonProperty("shouldCapture")]
         public int ShouldCapture { get; set; }
@@ -330,7 +330,31 @@ namespace PrimePenguin.CentraSharp.Entities
         public int gtg { get; set; }
 
         /// <summary>
-        /// Products
+        /// ShipmentDate
+        /// </summary>
+        [JsonProperty("shipmentDate")]
+        public string ShipmentDate { get; set; }
+
+        /// <summary>
+        /// TrackingNumber
+        /// </summary>
+        [JsonProperty("trackingNumber")]
+        public string TrackingNumber { get; set; }
+
+        /// <summary>
+        /// TrackingUrl
+        /// </summary>
+        [JsonProperty("trackingUrl")]
+        public string TrackingUrl { get; set; }
+
+        /// <summary>
+        /// ReturnSlipTracking
+        /// </summary>
+        [JsonProperty("returnSlipTracking")]
+        public string ReturnSlipTracking { get; set; }
+
+        /// <summary>
+        /// Products inside the shipment.
         /// </summary>
         [JsonProperty("products")]
         public List<ShipmentProduct> Products { get; set; }

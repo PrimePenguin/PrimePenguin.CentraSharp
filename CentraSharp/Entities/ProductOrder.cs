@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -82,6 +85,12 @@ namespace PrimePenguin.CentraSharp.Entities
         [JsonProperty("comment")]
         public string Comment { get; set; }
 
+        /// <summary>
+        /// OtherComment
+        /// </summary>
+        [JsonProperty("otherComment")]
+        public string OtherComment { get; set; }
+
         ///// <summary>
         ///// Categories
         ///// </summary>
@@ -89,13 +98,13 @@ namespace PrimePenguin.CentraSharp.Entities
         //public IList<string> Categories { get; set; }
 
         /// <summary>
-        /// LineId
+        /// Id of the specific product item in this order.
         /// </summary>
         [JsonProperty("lineId")]
         public string LineId { get; set; }
 
         /// <summary>
-        /// Qty
+        /// Quantity of this specific product item.
         /// </summary>
         [JsonProperty("qty")]
         public int Qty { get; set; }
@@ -111,5 +120,53 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("originalPrice")]
         public double OriginalPrice { get; set; }
+
+        /// <summary>
+        /// TaxPercent
+        /// </summary>
+        [JsonProperty("taxPercent")]
+        public double? TaxPercent { get; set; }
+
+        /// <summary>
+        /// PriceDiscount
+        /// </summary>
+        [JsonProperty("priceDiscount")]
+        public double? PriceDiscount { get; set; }
+
+        /// <summary>
+        /// PriceDiscountAsPercent
+        /// </summary>
+        [JsonProperty("priceDiscountAsPercent")]
+        public double? PriceDiscountAsPercent { get; set; }
+
+        /// <summary>
+        /// taxValue
+        /// </summary>
+        [JsonProperty("taxValue")]
+        public double? TaxValue { get; set; }
+
+        /// <summary>
+        /// TotalPrice
+        /// </summary>
+        [JsonProperty("totalPrice")]
+        public double? TotalPrice { get; set; }
+
+        /// <summary>
+        /// AnyDiscount
+        /// </summary>
+        [JsonProperty("anyDiscount")]
+        public bool AnyDiscount { get; set; }
+
+        /// <summary>
+        /// PriceEachWithoutTax
+        /// </summary>
+        [JsonProperty("priceEachWithoutTax")]
+        public double? PriceEachWithoutTax { get; set; }
+
+        /// <summary>
+        /// warehouses
+        /// </summary>
+        [JsonProperty("warehouses")]
+        public ICollection<Warehouse> Warehouses { get; set; } = new Collection<Warehouse>();
     }
 }

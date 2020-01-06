@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
@@ -94,5 +95,23 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("qty")]
         public int Qty { get; set; }
+
+        /// <summary>
+        /// OriginalPrice
+        /// </summary>
+        [JsonProperty("originalPrice")]
+        public decimal? OriginalPrice { get; set; }
+
+        /// <summary>
+        /// Price
+        /// </summary>
+        [JsonProperty("price")]
+        public decimal? Price { get; set; }
+
+        /// <summary>
+        /// warehouses
+        /// </summary>
+        [JsonProperty("warehouses")]
+        public ICollection<Warehouse> Warehouses { get; set; } = new Collection<Warehouse>();
     }
 }

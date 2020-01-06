@@ -35,5 +35,31 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// </summary>
         [JsonProperty("gtg")]
         public bool? Gtg { get; set; }
+
+        /// <summary>
+        /// Default: true. If Centra should capture the shipment amount from the payment
+        /// </summary>
+        [JsonProperty("capture")]
+        public bool? Capture { get; set; }
+
+        /// <summary>
+        /// Carrier used for shipping. Only used if shipped is true.
+        /// </summary>
+        [JsonProperty("carrier")]
+        public string Carrier { get; set; }
+
+        /// <summary>
+        /// Service level used for shipping. Only used if shipped is true
+        /// </summary>
+        [JsonProperty("service")]
+        public string Service { get; set; }
+
+        /// <summary>
+        /// Number of packages in shipment. Only used if shipped is true
+        /// </summary>
+        [JsonProperty("packages")]
+        public int Packages { get; set; }
+
+
     }
 }

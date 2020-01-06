@@ -17,15 +17,15 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public string Msg { get; set; }
 
         /// <summary>
-        /// Order
+        /// Order ID that was completed
         /// </summary>
         [JsonProperty("order")]
         public int Order { get; set; }
 
         /// <summary>
-        /// Shipments
+        /// Shipment ID that was completed.
         /// </summary>
         [JsonProperty("shipment")]
-        public Entities.Shipment Shipment { get; set; }
+        public string Shipment { get; set; }
     }
 }
