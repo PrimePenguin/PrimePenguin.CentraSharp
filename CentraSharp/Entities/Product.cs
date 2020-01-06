@@ -1,32 +1,30 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using PrimePenguin.CentraSharp.Converters;
-using PrimePenguin.CentraSharp.Infrastructure;
 
 namespace PrimePenguin.CentraSharp.Entities
 {
     public class Product
     {
         /// <summary>
-        /// Sku
+        /// SKU for this product.
         /// </summary>
         [JsonProperty("sku")]
         public string Sku { get; set; }
 
         /// <summary>
-        /// Variant Id
+        /// ID for this variant.
         /// </summary>
         [JsonProperty("variantId")]
         public int VariantId { get; set; }
 
         /// <summary>
-        /// VariantSku
+        /// SKU for this variant
         /// </summary>
         [JsonProperty("variantSku")]
         public string VariantSku { get; set; }
 
         /// <summary>
-        /// SizeSku
+        /// SKU for this size
         /// </summary>
         [JsonProperty("sizeSku")]
         public string SizeSku { get; set; }
@@ -44,13 +42,13 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Collection { get; set; }
 
         /// <summary>
-        /// Product
+        /// The internal name for this product.
         /// </summary>
         [JsonProperty("product")]
         public string Products { get; set; }
 
         /// <summary>
-        /// ProductId
+        /// ID for this product.
         /// </summary>
         [JsonProperty("productId")]
         public int ProductId { get; set; }
@@ -62,37 +60,37 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Variant { get; set; }
 
         /// <summary>
-        /// Size
+        /// Name of the size for this specific product item
         /// </summary>
         [JsonProperty("size")]
         public string Size { get; set; }
 
         /// <summary>
-        /// StockItemId
+        /// ID for this specific stock item
         /// </summary>
         [JsonProperty("stockItemId")]
         public int StockItemId { get; set; }
 
         /// <summary>
-        /// Ean
+        /// The EAN for this product item size.
         /// </summary>
         [JsonProperty("ean")]
         public string Ean { get; set; }
 
         /// <summary>
-        /// Weight
+        /// The weight specified for this product
         /// </summary>
         [JsonProperty("weight")]
         public double Weight { get; set; }
 
         /// <summary>
-        /// WeightUnit
+        /// The unit used for the weight
         /// </summary>
         [JsonProperty("weightUnit")]
         public string WeightUnit { get; set; }
 
         /// <summary>
-        /// CountryOfOrigin
+        /// ISO-Alpha-2 (SE, US, GB etc)
         /// </summary>
         [JsonProperty("countryOfOrigin")]
         public string CountryOfOrigin { get; set; }
@@ -110,13 +108,13 @@ namespace PrimePenguin.CentraSharp.Entities
         public string HarmDescription { get; set; }
 
         /// <summary>
-        /// Active
+        /// If the product item is active or not
         /// </summary>
         [JsonProperty("active")]
         public int Active { get; set; }
 
         /// <summary>
-        /// Name
+        /// The externally facing name for this product.
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -140,7 +138,7 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Comment { get; set; }
 
         /// <summary>
-        /// Categories
+        /// Array with names of the categories the product belongs to.
         /// </summary>
         [JsonProperty("categories")]
         public IList<string> Categories { get; set; }
@@ -152,7 +150,7 @@ namespace PrimePenguin.CentraSharp.Entities
         //public IList<string> Images { get; set; }
 
         /// <summary>
-        /// Prices
+        /// Array of the pricelists for this product.
         /// </summary>
         [JsonProperty("prices")]
         public IList<Price> Prices { get; set; }

@@ -6,25 +6,25 @@ namespace PrimePenguin.CentraSharp.Entities
     public class Order
     {
         /// <summary>
-        /// OrderId
+        /// Id of the order.
         /// </summary>
         [JsonProperty("orderId")]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// OrderStatus
+        /// Status of the order.
         /// </summary>
         [JsonProperty("orderStatus")]
         public string OrderStatus { get; set; }
 
         /// <summary>
-        /// SelectionId
+        /// Selection ID of the order.
         /// </summary>
         [JsonProperty("selectionId")]
         public string SelectionId { get; set; }
 
         /// <summary>
-        /// OrderDate
+        /// Date when order was created.
         /// </summary>
         [JsonProperty("orderDate")]
         public string OrderDate { get; set; }
@@ -264,7 +264,73 @@ namespace PrimePenguin.CentraSharp.Entities
         public string InternalComment { get; set; }
 
         /// <summary>
-        /// Products
+        /// MarketId
+        /// </summary>
+        [JsonProperty("marketId")]
+        public int MarketId { get; set; }
+
+        /// <summary>
+        /// PriceListId
+        /// </summary>
+        [JsonProperty("pricelistId")]
+        public int PriceListId { get; set; }
+
+        /// <summary>
+        /// IpAddress
+        /// </summary>
+        [JsonProperty("ipAddress")]
+        public string IpAddress { get; set; }
+
+        /// <summary>
+        /// OtherComment
+        /// </summary>
+        [JsonProperty("otherComment")]
+        public string OtherComment { get; set; }
+
+        /// <summary>
+        /// PaymentType
+        /// </summary>
+        [JsonProperty("paymentType")]
+        public string PaymentType { get; set; }
+
+        /// <summary>
+        /// paymentDescription
+        /// </summary>
+        [JsonProperty("paymentDescription")]
+        public string PaymentDescription { get; set; }
+
+        /// <summary>
+        /// DefaultCarrier
+        /// </summary>
+        [JsonProperty("defaultCarrier")]
+        public string DefaultCarrier { get; set; }
+
+        /// <summary>
+        /// TotalItemsPriceTax
+        /// </summary>
+        [JsonProperty("totalItemsPriceTax")]
+        public string TotalItemsPriceTax { get; set; }
+
+        /// <summary>
+        /// TotalItemsPrice
+        /// </summary>
+        [JsonProperty("totalItemsPrice")]
+        public string TotalItemsPrice { get; set; }
+
+        /// <summary>
+        /// TotalItemsWithoutTax
+        /// </summary>
+        [JsonProperty("totalItemsWithoutTax")]
+        public string TotalItemsWithoutTax { get; set; }
+
+        /// <summary>
+        /// TotalItemsDiscount
+        /// </summary>
+        [JsonProperty("totalItemsDiscount")]
+        public decimal? TotalItemsDiscount { get; set; }
+
+        /// <summary>
+        /// Products inside the order.
         /// </summary>
         [JsonProperty("products")]
         public IList<ProductOrder> Products { get; set; }
@@ -274,5 +340,71 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("shipments")]
         public List<OrderShipment> Shipments { get; set; }
+
+        /// <summary>
+        /// Products inside the order.
+        /// </summary>
+        [JsonProperty("discounts")]
+        public Discounts Discounts { get; set; }
+    }
+
+    public class Discounts
+    {
+        /// <summary>
+        /// AnyDiscount
+        /// </summary>
+        [JsonProperty("anyDiscount")]
+        public bool AnyDiscount { get; set; }
+
+        /// <summary>
+        /// Discount
+        /// </summary>
+        [JsonProperty("discount")]
+        public string Discount { get; set; }
+
+        /// <summary>
+        /// DiscountAsNumber
+        /// </summary>
+        [JsonProperty("discountAsNumber")]
+        public int DiscountAsNumber { get; set; }
+
+        /// <summary>
+        /// Vouchers
+        /// </summary>
+        [JsonProperty("vouchers")]
+        public List<Voucher> Vouchers { get; set; }
+    }
+
+    public class Voucher
+    {
+        /// <summary>
+        /// VoucherCode
+        /// </summary>
+        [JsonProperty("voucher")]
+        public string VoucherCode { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// PriceOff
+        /// </summary>
+        [JsonProperty("priceOff")]
+        public string PriceOff { get; set; }
+
+        /// <summary>
+        /// priceOffAsANumber
+        /// </summary>
+        [JsonProperty("priceOffAsANumber")]
+        public double? PriceOffAsANumber { get; set; }
+
+        /// <summary>
+        /// description
+        /// </summary>
+        [JsonProperty("description")]
+        public string Description { get; set; }
     }
 }
