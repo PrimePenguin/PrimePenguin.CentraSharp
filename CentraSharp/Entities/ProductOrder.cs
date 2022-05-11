@@ -7,6 +7,12 @@ namespace PrimePenguin.CentraSharp.Entities
 {
     public class ProductOrder
     {
+
+        /// <summary>
+        /// Product Id  
+        /// </summary>
+        [JsonProperty("productId")]
+        public string ProductId { get; set; }
         /// <summary>
         /// Sku
         /// </summary>
@@ -42,6 +48,12 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("size")]
         public string Size { get; set; }
+
+        /// <summary>
+        /// stockItemId
+        /// </summary>
+        [JsonProperty("stockItemId")]
+        public string StockItemId { get; set; }
 
         /// <summary>
         /// Ean
@@ -164,9 +176,27 @@ namespace PrimePenguin.CentraSharp.Entities
         public double? PriceEachWithoutTax { get; set; }
 
         /// <summary>
+        /// Price Each Reduction
+        /// </summary>
+        [JsonProperty("priceEachReduction")]
+        public decimal PriceEachReduction { get; set; }
+
+        /// <summary>
         /// warehouses
         /// </summary>
         [JsonProperty("warehouses")]
         public ICollection<Warehouse> Warehouses { get; set; } = new Collection<Warehouse>();
+
+        /// <summary>
+        /// Is Bundle
+        /// </summary>
+        [JsonProperty("isBundle")]
+        public bool IsBundle { get; set; }
+
+        /// <summary>
+        /// Is Part Of Bundle
+        /// </summary>
+        [JsonProperty("isPartOfBundle")]
+        public string IsPartOfBundle { get; set; }
     }
 }

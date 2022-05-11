@@ -108,6 +108,12 @@ namespace PrimePenguin.CentraSharp.Entities
         public int Hold { get; set; }
 
         /// <summary>
+        /// Waiting For Payment
+        /// </summary>
+        [JsonProperty("waitingForPayment")]
+        public int WaitingForPayment { get; set; }
+
+        /// <summary>
         /// ShippingValue
         /// </summary>
         [JsonProperty("shippingValue")]
@@ -130,6 +136,18 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("grandTotalTaxValue")]
         public double GrandTotalTaxValue { get; set; }
+
+        /// <summary>
+        /// Tax Added
+        /// </summary>
+        [JsonProperty("taxAdded")]
+        public int TaxAdded { get; set; }
+
+        /// <summary>
+        /// Tax Deducted
+        /// </summary>
+        [JsonProperty("taxDeducted")]
+        public int TaxDeducted { get; set; }
 
         /// <summary>
         /// DeliveryName
@@ -294,10 +312,35 @@ namespace PrimePenguin.CentraSharp.Entities
         public string PaymentType { get; set; }
 
         /// <summary>
+        /// Payment Plugin
+        /// </summary>
+        [JsonProperty("paymentPlugin")]
+        public string PaymentPlugin { get; set; }
+
+        /// <summary>
         /// paymentDescription
         /// </summary>
         [JsonProperty("paymentDescription")]
         public string PaymentDescription { get; set; }
+
+        /// <summary>
+        /// Payment Reference
+        /// </summary>
+        [JsonProperty("paymentReference")]
+        public string PaymentReference { get; set; }
+
+        /// <summary>
+        /// Payment Method
+        /// </summary>
+        [JsonProperty("paymentMethod")]
+        public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Tax Break Downs
+        /// </summary>
+        [JsonProperty("taxBreakdown")]
+        public List<TaxBreakDown> TaxBreakDowns { get; set; }
+
 
         /// <summary>
         /// DefaultCarrier
@@ -406,5 +449,89 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("description")]
         public string Description { get; set; }
+
+        /// <summary>
+        /// IsCredit
+        /// </summary>
+        [JsonProperty("isCredit")]
+        public bool IsCredit { get; set; }
+
+        /// <summary>
+        /// OriginalPriceOff
+        /// </summary>
+        [JsonProperty("originalPriceOff")]
+        public string OriginalPriceOff { get; set; }
+
+        /// <summary>
+        /// OriginalPriceOffAsNumber
+        /// </summary>
+        [JsonProperty("originalPriceOffAsNumber")]
+        public decimal OriginalPriceOffAsNumber { get; set; }
+    }
+    public class TaxBreakDown
+    {
+        /// <summary>
+        /// Description
+        /// </summary>
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// TaxPercent
+        /// </summary>
+        [JsonProperty("taxPercent")]
+        public int TaxPercent { get; set; }
+
+        /// <summary>
+        /// Value
+        /// </summary>
+        [JsonProperty("value")]
+        public decimal Value { get; set; }
+    }
+
+    public class AutomaticDiscount
+    {
+        /// <summary>
+        /// AutomaticItemDiscount
+        /// </summary>
+        [JsonProperty("automaticDiscount")]
+        public string AutomaticItemDiscount { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// PriceOff
+        /// </summary>
+        [JsonProperty("priceOff")]
+        public string PriceOff { get; set; }
+
+        /// <summary>
+        /// PriceOffAsNumber
+        /// </summary>
+        [JsonProperty("priceOffAsNumber")]
+        public int PriceOffAsNumber { get; set; }
+
+        /// <summary>
+        /// IsCredit
+        /// </summary>
+        [JsonProperty("isCredit")]
+        public bool IsCredit { get; set; }
+
+        /// <summary>
+        /// OriginalPriceOff
+        /// </summary>
+        [JsonProperty("originalPriceOff")]
+        public string OriginalPriceOff { get; set; }
+
+        /// <summary>
+        /// OriginalPriceOffAsNumber
+        /// </summary>
+        [JsonProperty("originalPriceOffAsNumber")]
+        public decimal OriginalPriceOffAsNumber { get; set; }
+
     }
 }

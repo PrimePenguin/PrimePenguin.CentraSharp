@@ -66,6 +66,12 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Size { get; set; }
 
         /// <summary>
+        /// Name of the size comment for this specific product item
+        /// </summary>
+        [JsonProperty("sizeComment")]
+        public string SizeComment { get; set; }
+
+        /// <summary>
         /// ID for this specific stock item
         /// </summary>
         [JsonProperty("stockItemId")]
@@ -114,6 +120,12 @@ namespace PrimePenguin.CentraSharp.Entities
         public int Active { get; set; }
 
         /// <summary>
+        /// Created date for this product.
+        /// </summary>
+        [JsonProperty("createdAt")]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
         /// The externally facing name for this product.
         /// </summary>
         [JsonProperty("name")]
@@ -138,22 +150,58 @@ namespace PrimePenguin.CentraSharp.Entities
         public string Comment { get; set; }
 
         /// <summary>
+        /// More information about title
+        /// </summary>
+        [JsonProperty("metaTitle")]
+        public string MetaTitle { get; set; }
+
+        /// <summary>
+        /// Meta Description
+        /// </summary>
+        [JsonProperty("metaDescription")]
+        public string MetaDescription { get; set; }
+
+        /// <summary>
+        /// MetaKeywords
+        /// </summary>
+        [JsonProperty("metaKeywords")]
+        public string MetaKeywords { get; set; }
+
+        /// <summary>
+        /// Folder
+        /// </summary>
+        [JsonProperty("folder")]
+        public string Folder { get; set; }
+
+        /// <summary>
         /// Array with names of the categories the product belongs to.
         /// </summary>
         [JsonProperty("categories")]
         public IList<string> Categories { get; set; }
 
-        ///// <summary>
-        ///// Images
-        ///// </summary>
-        //[JsonProperty("images")]
-        //public IList<string> Images { get; set; }
+        /// <summary>
+        /// Name of the product category
+        /// </summary>
+        [JsonProperty("categoryName")]
+        public string CategoryName { get; set; }
+
+        /// <summary>
+        /// Images
+        /// </summary>
+        [JsonProperty("images")]
+        public IList<string> Images { get; set; }
 
         /// <summary>
         /// Array of the pricelists for this product.
         /// </summary>
         [JsonProperty("prices")]
         public IList<Price> Prices { get; set; }
+
+        /// <summary>
+        /// Store to which product belongs
+        /// </summary>
+        [JsonProperty("store")]
+        public string Store { get; set; }
 
         /// <summary>
         /// CostPrice

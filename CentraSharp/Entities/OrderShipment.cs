@@ -45,5 +45,11 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("returnSlipTracking")]
         public string ReturnSlipTracking { get; set; }
+
+        /// <summary>
+        /// Additional Message
+        /// </summary>
+        [JsonProperty("additionalMessage")]
+        public string AdditionalMessage { get; set; }
     }
 }
