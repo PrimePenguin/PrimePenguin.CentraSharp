@@ -12,13 +12,13 @@ namespace PrimePenguin.CentraSharp.Filters
         public string Sku { get; set; }
 
         /// <summary>
-        /// Get all products modified after a certain date. (YYYY-MM-DD).
+        /// Get all products modified after a certain date. YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("modified")]
         public string Modified { get; set; }
 
         /// <summary>
-        /// Get all products added after a certain date. (YYYY-MM-DD).
+        /// Get all products added after a certain date. YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("created")]
         public string Created { get; set; }
@@ -35,6 +35,12 @@ namespace PrimePenguin.CentraSharp.Filters
         /// </summary>
         [JsonProperty("limit")]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// Variant Id
+        /// </summary>
+        [JsonProperty("page")]
+        public int? Page { get; set; }
 
         /// <summary>
         /// Variant Id

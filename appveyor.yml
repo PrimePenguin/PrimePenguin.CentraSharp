@@ -22,6 +22,6 @@ skip_commits:
 deploy:
 - provider: NuGet
   api_key:
-    secure: Gcoshd09eB+WOeRY65vdsdg5Zy6vXKLXad7cVBkp9uxxkPEp+qDziOFJ8xW7rcTz
+      secure: rKMx/GMvHjSKWMkjOr2Bzo+ht7il6JXI0lJdtBhVVaEqCMsv28lXrDGT7tqIFMNq
   on:
     branch: master

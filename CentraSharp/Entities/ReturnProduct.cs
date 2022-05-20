@@ -8,7 +8,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// ID of the specific product item in this return
         /// </summary>
         [JsonProperty("returnLineId")]
-        public int ReturnLineId { get; set; }
+        public string ReturnLineId { get; set; }
 
         /// <summary>
         /// ID of the related shipment line
@@ -20,7 +20,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// ID of the related order line
         /// </summary>
         [JsonProperty("orderLineId")]
-        public int OrderLineId { get; set; }
+        public string OrderLineId { get; set; }
 
         /// <summary>
         /// ID of the product

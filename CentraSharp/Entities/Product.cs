@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace PrimePenguin.CentraSharp.Entities
@@ -123,7 +124,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// Created date for this product.
         /// </summary>
         [JsonProperty("createdAt")]
-        public string CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// The externally facing name for this product.

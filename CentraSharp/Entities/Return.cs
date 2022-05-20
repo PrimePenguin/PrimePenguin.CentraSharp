@@ -12,6 +12,13 @@ namespace PrimePenguin.CentraSharp.Entities
         public int ReturnId { get; set; }
 
         /// <summary>
+        /// Completed
+        /// </summary>
+        [JsonProperty("completed")]
+        
+        public bool Completed { get; set; }
+       
+        /// <summary>
         /// Number of the shipment
         /// </summary>
         [JsonProperty("shipment")]
@@ -27,7 +34,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// ID of the order
         /// </summary>
         [JsonProperty("orderId")]
-        public int OrderId { get; set; }
+        public string OrderId { get; set; }
 
         /// <summary>
         /// Selection ID of the order
@@ -40,6 +47,18 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("date")]
         public string Date { get; set; }
+
+        /// <summary>
+        /// Market Id
+        /// </summary>
+        [JsonProperty("marketId")]
+
+        public int MarketId { get; set; }
+        /// <summary>
+        /// Price List Id
+        /// </summary>
+        [JsonProperty("pricelistId")]
+        public long PricelistId { get; set; }
 
         /// <summary>
         /// Cost of the return

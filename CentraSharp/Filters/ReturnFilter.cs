@@ -9,19 +9,19 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Limit the number of returns returned.
         /// </summary>
         [JsonProperty("limit")]
-        public int Limit { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
         /// Number of page of results to return.
         /// </summary>
         [JsonProperty("page")]
-        public int Page { get; set; }
+        public int? Page { get; set; }
 
         /// <summary>
         /// Only show a return with given ID.
         /// </summary>
         [JsonProperty("return")]
-        public int Return { get; set; }
+        public int? Return { get; set; }
 
         /// <summary>
         /// Only show a return with given shipment number.
@@ -33,22 +33,28 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Only fetch returns for a specific order
         /// </summary>
         [JsonProperty("order")]
-        public int Order { get; set; }
+        public int? Order { get; set; }
 
         /// <summary>
         /// Only fetch returns for a specific selection
         /// </summary>
         [JsonProperty("selection")]
-        public int Selection { get; set; }
+        public int? Selection { get; set; }
 
         /// <summary>
-        /// Return order newer than date (YYYY-MM-DD).
+        /// Only fetch returns for a specific customer
+        /// </summary>
+        [JsonProperty("customer_id")]
+        public int? CustomerId { get; set; }
+
+        /// <summary>
+        /// Return order newer than date YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("newer_than")]
         public string NewerThan { get; set; }
 
         /// <summary>
-        /// Return order newer than date (YYYY-MM-DD).
+        /// Return order newer than date YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("older_than")]
         public string OlderThan { get; set; }

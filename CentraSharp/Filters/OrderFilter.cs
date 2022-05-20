@@ -9,34 +9,34 @@ namespace PrimePenguin.CentraSharp.Filters
         /// Limit amount of orders returned.
         /// </summary>
         [JsonProperty("limit")]
-        public int Limits { get; set; }
+        public int? Limit { get; set; }
 
         /// <summary>
         /// Offset how far in to start returning orders.
         /// </summary>
         [JsonProperty("offset")]
-        public int Offset { get; set; }
+        public int? Offset { get; set; }
 
         /// <summary>
         /// TReturn a specific order.
         /// </summary>
         [JsonProperty("order")]
-        public int order { get; set; }
+        public int? Order { get; set; }
 
         /// <summary>
         /// Return orders for specified customer id.
         /// </summary>
         [JsonProperty("customer_id")]
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
         /// <summary>
-        /// Return order newer than date (YYYY-MM-DD).
+        /// Return order newer than date YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("newer_than")]
         public string NewerThan { get; set; }
 
         /// <summary>
-        /// Return order newer than date (YYYY-MM-DD).
+        /// Return order newer than date YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("older_than")]
         public string OlderThan { get; set; }
