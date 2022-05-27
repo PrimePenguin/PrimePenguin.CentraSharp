@@ -58,7 +58,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// Number of packages in shipment. Only used if shipped is true
         /// </summary>
         [JsonProperty("packages")]
-        public int Packages { get; set; }
+        public int? Packages { get; set; }
 
 
     }

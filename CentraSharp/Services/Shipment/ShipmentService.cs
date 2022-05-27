@@ -70,7 +70,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// <returns></returns>
         public virtual async Task<CompleteShipmentResponse> CompleteShipmentAsync(CompleteShipmentFilter options)
         {
-            var req = PrepareRequest($"shipments/{options.Shipment}");
+            var req = PrepareRequest("shipment");
             var body = options.ToDictionary();
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
