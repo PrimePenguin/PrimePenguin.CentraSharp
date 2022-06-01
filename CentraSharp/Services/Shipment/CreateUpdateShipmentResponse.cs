@@ -11,10 +11,10 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public string Status { get; set; }
 
         /// <summary>
-        /// Shipmentsf
+        /// Shipment Id
         /// </summary>
         [JsonProperty("shipment")]
-        public Entities.Shipment Shipment { get; set; }
+        public string Shipment { get; set; }
 
         /// <summary>
         /// If status returns no, this value should send back a message why it failed.
@@ -44,6 +44,6 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// URL to a PDF invoice for the shipment. Will only be set if an invoice exists
         /// </summary>
         [JsonProperty("invoice")]
-        public string Invoice { get; set; }
+        public string[] Invoice { get; set; }
     }
 }

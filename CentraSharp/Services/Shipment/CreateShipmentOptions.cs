@@ -16,7 +16,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// Key is lineID from the Get orders response and value is the quantity.
         /// </summary>
         [JsonProperty("products")]
-        public Dictionary<string, int> Products { get; set; }
+        public Dictionary<string, int?> Products { get; set; }
 
         /// <summary>
         /// Default: true. Mark the shipment as sent.
@@ -58,7 +58,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         /// Number of packages in shipment. Only used if shipped is true
         /// </summary>
         [JsonProperty("packages")]
-        public int Packages { get; set; }
+        public int? Packages { get; set; }
 
 
     }
