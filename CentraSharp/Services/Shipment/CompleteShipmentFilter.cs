@@ -6,7 +6,7 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
     public class CompleteShipmentFilter : Parameterizable
     {
         /// <summary>
-        /// Order ID to which the shipment belongs
+        /// Order ID to which the shipment belongs.
         /// </summary>
         [JsonProperty("order")]
         public int Order { get; set; }
