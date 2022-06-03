@@ -36,6 +36,12 @@ namespace PrimePenguin.CentraSharp.Services.Shipment
         public string NewerThan { get; set; }
 
         /// <summary>
+        /// Default value: goodtogo. Allowed values: inprogress, goodtogo, completed
+        /// </summary>
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        /// <summary>
         /// Return order newer than date YYYY-mm-dd HH:MM:SS
         /// </summary>
         [JsonProperty("older_than")]
