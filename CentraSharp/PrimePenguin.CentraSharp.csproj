@@ -21,7 +21,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="microsoft.extensions.primitives" Version="1.1.0" />
-    <PackageReference Include="newtonsoft.json" Version="10.0.1" />
+    <PackageReference Include="newtonsoft.json" Version="13.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
   <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
