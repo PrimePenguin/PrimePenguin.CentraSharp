@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;netstandard1.4;</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <AssemblyName>PrimePenguin.CentraSharp</AssemblyName>
     <RootNamespace>PrimePenguin.CentraSharp</RootNamespace>
-    <Version>0.4.6</Version>
+    <Version>0.5.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>
@@ -20,17 +20,6 @@
     <Product>CentraSharp</Product>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="microsoft.extensions.primitives" Version="1.1.0" />
-    <PackageReference Include="newtonsoft.json" Version="10.0.1" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+	  <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^net\d'))">
-    <DefineConstants>NETFRAMEWORK</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netstandard\d'))">
-    <DefineConstants>NETSTANDARD</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(TargetFramework)', '^netcoreapp\d'))">
-    <DefineConstants>NETCORE</DefineConstants>
-  </PropertyGroup>
 </Project>
