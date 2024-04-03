@@ -113,5 +113,17 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("warehouses")]
         public ICollection<Warehouse> Warehouses { get; set; } = new Collection<Warehouse>();
+
+        /// <summary>
+        /// Is Bundle
+        /// </summary>
+        [JsonProperty("isBundle")]
+        public bool IsBundle { get; set; }
+
+        /// <summary>
+        /// Is Part Of Bundle
+        /// </summary>
+        [JsonProperty("isPartOfBundle")]
+        public string IsPartOfBundle { get; set; }
     }
 }
