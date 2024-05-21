@@ -3,7 +3,7 @@
     <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
     <AssemblyName>PrimePenguin.CentraSharp</AssemblyName>
     <RootNamespace>PrimePenguin.CentraSharp</RootNamespace>
-    <Version>0.5.0</Version>
+    <Version>0.6.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <Description>CentraSharp is a C# and .NET library that helps developers easily authenticate with and manage Centra stores.</Description>

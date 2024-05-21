@@ -60,10 +60,20 @@ namespace PrimePenguin.CentraSharp.Services.SupplierDelivery
         public virtual async Task<AcceptDeliveryResponse> AcceptSupplierDeliveryAsync(UpdateSupplierDeliveryOption option, int supplierDeliveryId)
         {
             var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}");
-            var content = new JsonContent(new
-            {
-                products = option.Products
-            });
+            var content = new JsonContent(new { products = option.Products });
+            return await ExecuteRequestAsync<AcceptDeliveryResponse>(req, HttpMethod.Post, content);
+        }
+
+        /// <summary>
+        /// Accept Supplier Delivery
+        /// </summary>
+        /// <param name="option"></param>
+        /// <param name="supplierDeliveryId"></param>
+        /// <returns></returns>
+        public virtual async Task<AcceptDeliveryResponse> AcceptSupplierDeliverySkuAsync(UpdateSupplierDeliveryOption option, long supplierDeliveryId)
+        {
+            var req = PrepareRequest($"supplier-deliveries/{supplierDeliveryId}/sku");
+            var content = new JsonContent(new { products = option.Products });
             return await ExecuteRequestAsync<AcceptDeliveryResponse>(req, HttpMethod.Post, content);
         }
     }
