@@ -88,10 +88,11 @@ namespace PrimePenguin.CentraSharp.Services.Order
         /// <param name="orderId">Id of the object being updated.</param>
         /// <param name="comment"></param>
         /// <returns>The updated <see cref="Order" />.</returns>
-        public virtual async Task<CompleteOrderResponse> CompleteOrderAsync(long orderId, string comment)
+        public virtual async Task<CompleteOrderResponse> CompleteOrderAsync(CompleteOrderFilter order)
         {
-            var req = PrepareRequest($"order/{orderId}");
-            var content = new JsonContent(comment);
+            var req = PrepareRequest($"order/{order.OrderId}");
+            var body = order.ToDictionary();
+            var content = new JsonContent(body);
             return await ExecuteRequestAsync<CompleteOrderResponse>(req, HttpMethod.Post, content);
         }
     }
