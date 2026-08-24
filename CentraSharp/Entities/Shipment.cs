@@ -225,7 +225,7 @@ namespace PrimePenguin.CentraSharp.Entities
         /// ShippingValue
         /// </summary>
         [JsonProperty("shippingValue")]
-        public int ShippingValue { get; set; }
+        public decimal? ShippingValue { get; set; }
 
         /// <summary>
         /// VoucherValue
