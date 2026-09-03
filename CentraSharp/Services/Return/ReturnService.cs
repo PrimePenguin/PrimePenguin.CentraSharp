@@ -43,10 +43,12 @@ namespace PrimePenguin.CentraSharp.Services.Return
             var req = PrepareRequest("return");
             var content = new JsonContent(new
             {
+                shipment = returnOptions.Shipment,
+                returnStock = returnOptions.ReturnStock,
                 comment = returnOptions.Comment,
                 products = returnOptions.Products,
-                returnStock = returnOptions.ReturnStock,
-                shipment = returnOptions.Shipment
+               
+               
             });
             return await ExecuteRequestAsync<CentraReturnResponse>(req, HttpMethod.Post, content);
         }

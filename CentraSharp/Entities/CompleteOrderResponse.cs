@@ -16,5 +16,11 @@ namespace PrimePenguin.CentraSharp.Entities
         /// </summary>
         [JsonProperty("status")]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Error Message
+        /// </summary>
+        [JsonProperty("msg")]
+        public string Msg { get; set; }
     }
 }

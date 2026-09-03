@@ -18,10 +18,22 @@ namespace PrimePenguin.CentraSharp.Services.Return
         public int Return { get; set; }
 
         /// <summary>
+        /// Return Completed
+        /// </summary>
+        [JsonProperty("returnCompleted")]
+        public bool ReturnCompleted { get; set; }
+
+        /// <summary>
         /// ReturnedItems
         /// </summary>
         [JsonProperty("returnedItems")]
-        public List<string> ReturnedItems { get; set; }
+        public string[] ReturnedItems { get; set; }
+
+        /// <summary>
+        /// ReturnedItems
+        /// </summary>
+        [JsonProperty("refund")]
+        public Dictionary<string,string> Refund { get; set; }
 
         /// <summary>
         /// Msg
